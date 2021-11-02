@@ -1,0 +1,9 @@
+.palette {
+    position: absolute;
+    display: flex;
+    top: 90vh;
+    justify-content: space-evenly;
+    padding-left: 15vw;
+    padding-right: 15vw;
+    width: 70vw;
+}
