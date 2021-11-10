@@ -38,17 +38,17 @@ function Avatar() {
     const [clicked, setClicked] = useState(1);
     const {buttonColor, dispatch} = useContext(UIContext);
 
-    console.log(buttonColor)
+    // console.log(buttonColor)
     const matColor = new THREE.Color(buttonColor);
   
     // Use hook to add things to render loop
     useFrame((state, delta) => {
       // console.log("This runs at 60fps")
         headRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 3) + 0.6;
-        headRef.current.position.z = THREE.MathUtils.lerp(headRef.current.position.z, clicked%2 ? 2 : 1, 0.2);
+        headRef.current.position.z = THREE.MathUtils.lerp(headRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
 
         bodyRef.current.position.y = 0.32* Math.sin(state.clock.elapsedTime * 3) - 0.4;
-        bodyRef.current.position.z = THREE.MathUtils.lerp(bodyRef.current.position.z, clicked%2 ? 2 : 1, 0.2);
+        bodyRef.current.position.z = THREE.MathUtils.lerp(bodyRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
 
         // shaderRef.current.uColor = color1.lerp(color2, (state.mouse.x + 1)/2);
         shaderRef.current.color = matColor;

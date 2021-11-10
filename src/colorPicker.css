@@ -1,9 +1,17 @@
 .palette {
     position: absolute;
     display: flex;
-    top: 90vh;
+    top: 80vh;
     justify-content: space-evenly;
     padding-left: 15vw;
     padding-right: 15vw;
     width: 70vw;
+}
+
+.button {
+    border-radius: 50%;
+    border: 3px solid black;
+    height: 72px;
+    width: 72px;
+    
 }

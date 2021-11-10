@@ -9,17 +9,29 @@ import ColorPicker from "./colorPicker"
 function reducer (state, action) {
   switch (action.type) {
     case "toGreen":
-      console.log("green");
+      // console.log("green");
       return {buttonColor: "green"};
     case "toRed":
-      console.log("red");
+      // console.log("red");
       return {buttonColor: "red"};
     case "toBlue":
-      console.log("blue");
+      // console.log("blue");
       return {buttonColor: "blue"};
     case "toYellow":
-      console.log("yellow");
+      // console.log("yellow");
       return {buttonColor: "yellow"};
+    case "toOrange":
+      // console.log("orange");
+      return {buttonColor: "orange"};
+    case "toPink":
+      // console.log("pink");
+      return {buttonColor: "pink"};
+    case "toPurple":
+      // console.log("purple");
+      return {buttonColor: "purple"};
+    case "toTeal":
+      // console.log("teal");
+      return {buttonColor: "teal"};
     default:
       return state;
   } 

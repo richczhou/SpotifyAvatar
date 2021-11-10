@@ -9,10 +9,38 @@ function ColorPicker () {
 
     return (
         <div className="palette">
-            <button onClick={ () => dispatch( {type: 'toBlue'} ) }>Blue</button>
-            <button onClick={ () => dispatch( {type: 'toRed'} ) }>Red</button>
-            <button onClick={ () => dispatch( {type: 'toGreen'} ) }>Green</button>
-            <button onClick={ () => dispatch( {type: 'toYellow'} ) }>Yellow</button>
+            <button className="button" 
+                    style={{backgroundColor: "blue"}} 
+                    onClick={ () => dispatch( {type: 'toBlue'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "red"}} 
+                    onClick={ () => dispatch( {type: 'toRed'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "green"}} 
+                    onClick={ () => dispatch( {type: 'toGreen'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "yellow"}} 
+                    onClick={ () => dispatch( {type: 'toYellow'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "orange"}} 
+                    onClick={ () => dispatch( {type: 'toOrange'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "pink"}} 
+                    onClick={ () => dispatch( {type: 'toPink'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "purple"}} 
+                    onClick={ () => dispatch( {type: 'toPurple'} ) }>
+            </button>
+            <button className="button" 
+                    style={{backgroundColor: "teal"}} 
+                    onClick={ () => dispatch( {type: 'toTeal'} ) }>        
+            </button>
         </div>
     );
 }
