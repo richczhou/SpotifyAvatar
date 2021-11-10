@@ -1,18 +1,18 @@
-import { Suspense, useRef, useState } from "react"
+import { Suspense, useRef, useState, useReducer, useContext } from "react"
 import './colorPicker.css';
+import { UIContext } from "./App";
 
 function ColorPicker () {
 
-    function handleClick (color) {
-        console.log(color);
-    }
+    const {buttonColor, dispatch} = useContext(UIContext);
+    // console.log(buttonColor)
 
     return (
-        <div class="palette">
-            <button onClick={ () => handleClick("blue") }>Blue</button>
-            <button onClick={ () => handleClick("red") }>Red</button>
-            <button onClick={ () => handleClick("green") }>Green</button>
-            <button onClick={ () => handleClick("yellow") }>Yellow</button>
+        <div className="palette">
+            <button onClick={ () => dispatch( {type: 'toBlue'} ) }>Blue</button>
+            <button onClick={ () => dispatch( {type: 'toRed'} ) }>Red</button>
+            <button onClick={ () => dispatch( {type: 'toGreen'} ) }>Green</button>
+            <button onClick={ () => dispatch( {type: 'toYellow'} ) }>Yellow</button>
         </div>
     );
 }
