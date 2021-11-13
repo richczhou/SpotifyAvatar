@@ -36,7 +36,15 @@ function Avatar() {
     const shaderRef = useRef();
     const shaderRef1 = useRef();
     const [clicked, setClicked] = useState(1);
-    const {buttonColor, dispatch} = useContext(UIContext);
+    const {buttonColor, headShape, dispatch} = useContext(UIContext);
+    // console.log(headShape);
+
+    const material = new THREE.MeshLambertMaterial({ color: "green" });
+    const headGeos = [
+      new THREE.BoxGeometry(1, 1, 1),
+      new THREE.SphereGeometry( 0.5 ),
+      new THREE.CylinderGeometry( 0.5, 0.5, 1 )
+    ]
 
     // console.log(buttonColor)
     const matColor = new THREE.Color(buttonColor);
@@ -61,12 +69,13 @@ function Avatar() {
         <mesh ref={bodyRef} onClick={() => setClicked(clicked + 1)}>
           <cylinderGeometry />
           <meshLambertMaterial ref={shaderRef} />
-          {/* <hueMaterial attach="material" ref={shaderRef} /> */}
         </mesh>
-        <mesh ref={headRef} onClick={() => setClicked(clicked + 1)}>
+        {/* <mesh ref={headRef} onClick={() => setClicked(clicked + 1)}>
           <sphereGeometry />
           <meshLambertMaterial ref={shaderRef1} />
-          {/* <hueMaterial attach="material" ref={shaderRef} /> */}
+        </mesh> */}
+        <mesh ref={headRef} args={[headGeos[ headShape%3 ], null]} onClick={() => setClicked(clicked + 1)}>
+          <meshLambertMaterial ref={shaderRef1} />
         </mesh>
       </group>
     )

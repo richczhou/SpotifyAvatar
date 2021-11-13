@@ -1,0 +1,16 @@
+.navGroup {
+    position: absolute;
+    display: flex;
+    top: 50vh;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    width: 90vw;
+}
+
+.arrow {
+    border-radius: 5px;
+    border: 2px solid grey;
+    height: 50px;
+    width: 100px;
+}
