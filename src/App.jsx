@@ -54,13 +54,13 @@ function UseContextBridgeWrapper () {
           
         {/* Components */}
         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-        <Avatar />
         
         {/* LIGHTS! */}
         <ambientLight intensity={0.3} />
         <spotLight position={[10, 10, 10]} intensity={1} />
         <Suspense fallback={null} >  
           <Environment preset="studio" />
+          <Avatar />
         </Suspense>
 
       </ContextBridge>
