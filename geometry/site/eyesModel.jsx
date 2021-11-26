@@ -11,11 +11,11 @@ import HueMaterial from "./hueMaterial"
 
 extend({ HueMaterial })
 
-const HeadModel = forwardRef( (props, ref) => {
+const EyesModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/head.gltf')
-  const tmap = useTexture('./images/lightbakes/head.png');
-  const matColor = new THREE.Color(modelColor.head);
+  const { nodes, materials } = useGLTF('./geometry/site/eyes.gltf');
+  const tmap = useTexture('./images/lightbakes/eyes.png');
+  const matColor = new THREE.Color(modelColor.eyes);
 
   return (
     <group {...props} dispose={null}>
@@ -23,14 +23,14 @@ const HeadModel = forwardRef( (props, ref) => {
         ref={ref}
         castShadow
         receiveShadow
-        geometry={nodes.head.geometry}
+        geometry={nodes.eyes.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "head"}}
+        userData={{modelType: "eyes"}}
       >
         <hueMaterial 
           tMap={ tmap }
-          uColor={ matColor } 
-          uColor2={ new THREE.Color("green") }
+          uColor={ new THREE.Color("white") } 
+          uColor2={ new THREE.Color("grey") }
           uColor3={ new THREE.Color("red") }
           uBrightess={ 0.1 }
           attach="material" />
@@ -39,6 +39,6 @@ const HeadModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/head.gltf')
+useGLTF.preload('./geometry/site/eyes.gltf')
 
-export default HeadModel;
+export default EyesModel;

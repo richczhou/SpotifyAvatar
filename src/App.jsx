@@ -35,10 +35,18 @@ function reducer (state, action) {
       return {...state, buttonColor: "teal"};
     case "toLeft":
         console.log("left");
-        return {...state, headShape: state.headShape - 1};
+        return {...state, currentCategory: state.currentCategory - 1};
     case "toRight":
         console.log("right");
-        return {...state, headShape: state.headShape + 1};
+        return {...state, currentCategory: state.currentCategory + 1};
+    case "toUp":
+      // backing, eyes, glasses, hat, head, chest, skin, mouth
+        console.log("up")
+        return {...state, currentCategory: state.currentCategory - 1}
+    case "toDown":
+      // backing, eyes, glasses, hat, head, chest, skin, mouth
+        console.log("down")
+        return {...state, currentCategory: state.currentCategory + 1}
     default:
       return state;
   } 
@@ -69,13 +77,36 @@ function UseContextBridgeWrapper () {
 }
 
 export default function App() {
-  const [{ buttonColor, headShape }, dispatch] = useReducer(reducer, { buttonColor: "green", headShape: 100 })
+  const [{ buttonColor, modelColor, currentCategory }, dispatch] = useReducer(reducer, 
+    { buttonColor: "green", 
+      currentShape: {
+        backing: "backing",
+        eyes: "eyes",
+        glasses: "glasses",
+        hat: "hat",
+        head: "head",
+        chest: "hoodie",
+        skin: "skin",
+        mouth: "mouth"
+      },
+      currentCategory: 100,
+      modelColor: {
+        backing: "red",
+        eyes: "white",
+        glasses: "brown",
+        hat: "blue",
+        head: "orange",
+        chest: "green",
+        skin: "orange",
+        mouth: "red"
+      }
+    })
   // const [buttonState, dispatch] = useReducer(reducer, { buttonColor: "green", headShape: 100 })
   // move inside the provider within a shell function?
   // everything goes within the Canvas
   return (
   <div>
-    <UIContext.Provider value={{ buttonColor, headShape, dispatch }}>
+    <UIContext.Provider value={{ buttonColor, currentCategory, modelColor, dispatch }}>
       
       <UseContextBridgeWrapper />
 

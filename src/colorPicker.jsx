@@ -4,7 +4,7 @@ import { UIContext } from "./App";
 
 function ColorPicker () {
 
-    const {buttonColor, dispatch} = useContext(UIContext);
+    const { dispatch } = useContext(UIContext);
     // console.log(buttonColor)
 
     return (

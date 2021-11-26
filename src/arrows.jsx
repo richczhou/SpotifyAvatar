@@ -4,11 +4,12 @@ import { UIContext } from "./App";
 
 function Arrows () {
 
-    const {buttonColor, dispatch} = useContext(UIContext);
+    const {dispatch} = useContext(UIContext);
     // console.log(buttonColor)
 
     return (
-        <div className="navGroup">
+    <>
+        <div className="navGroup leftright">
             <button className="arrow"
                     onClick={ () => dispatch( {type: 'toLeft'} ) }>
             </button>
@@ -16,6 +17,15 @@ function Arrows () {
                     onClick={ () => dispatch( {type: 'toRight'} ) }>
             </button>
         </div>
+        <div className="navGroup updown">
+            <button className="arrow"
+                    onClick={ () => dispatch( {type: 'toUp'} ) }>
+            </button>
+            <button className="arrow"
+                    onClick={ () => dispatch( {type: 'toDown'} ) }>
+            </button>
+        </div>
+    </>
     );
 }
 

@@ -11,11 +11,11 @@ import HueMaterial from "./hueMaterial"
 
 extend({ HueMaterial })
 
-const HeadModel = forwardRef( (props, ref) => {
+const HatModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/head.gltf')
-  const tmap = useTexture('./images/lightbakes/head.png');
-  const matColor = new THREE.Color(modelColor.head);
+  const { nodes, materials } = useGLTF('./geometry/site/hat.gltf');
+  const tmap = useTexture('./images/lightbakes/hat.png');
+  const matColor = new THREE.Color(modelColor.hat);
 
   return (
     <group {...props} dispose={null}>
@@ -23,9 +23,9 @@ const HeadModel = forwardRef( (props, ref) => {
         ref={ref}
         castShadow
         receiveShadow
-        geometry={nodes.head.geometry}
+        geometry={nodes.hat.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "head"}}
+        userData={{modelType: "hat"}}
       >
         <hueMaterial 
           tMap={ tmap }
@@ -39,6 +39,6 @@ const HeadModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/head.gltf')
+useGLTF.preload('./geometry/site/hat.gltf')
 
-export default HeadModel;
+export default HatModel;

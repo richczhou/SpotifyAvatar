@@ -1,11 +1,18 @@
 .navGroup {
     position: absolute;
     display: flex;
-    top: 50vh;
     justify-content: space-between;
     padding-left: 5vw;
     padding-right: 5vw;
     width: 90vw;
+}
+
+.leftright {
+    top: 45vh;
+}
+
+.updown {
+    top: 55vh;
 }
 
 .arrow {
