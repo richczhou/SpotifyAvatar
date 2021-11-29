@@ -15,7 +15,7 @@ const ShirtModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/shirt.gltf');
   const tmap = useTexture('./images/lightbakes/shirt.png');
-  const matColor = new THREE.Color(modelColor.chest);
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
 
   return (
     <group {...props} dispose={null}>

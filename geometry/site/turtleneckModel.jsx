@@ -15,7 +15,7 @@ const TurtleneckModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/turtleneck.gltf');
   const tmap = useTexture('./images/lightbakes/turtleneck.png');
-  const matColor = new THREE.Color(modelColor.chest);
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
 
   return (
     <group {...props} dispose={null}>

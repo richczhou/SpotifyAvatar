@@ -15,7 +15,7 @@ const SkinModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/skin.gltf');
   const tmap = useTexture('./images/lightbakes/skin.png');
-  const matColor = new THREE.Color(modelColor.skin);
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "skin").color);
 
   return (
     <group {...props} dispose={null}>

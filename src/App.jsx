@@ -8,31 +8,39 @@ import Arrows from "./Arrows"
 
 
 function reducer (state, action) {
+  let temp = {...state};
   switch (action.type) {
     case "toGreen":
-      // console.log("green");
-      return {...state, buttonColor: "green"};
+      temp.modelColor[temp.currentCount].color = "green";
+      return temp;
     case "toRed":
       // console.log("red");
-      return {...state, buttonColor: "red"};
+      temp.modelColor[temp.currentCount].color = "red";
+      return temp;
     case "toBlue":
-      // console.log("blue");
-      return {...state, buttonColor: "blue"};
+      // this might memory leak lmfao
+      temp.modelColor[temp.currentCount].color = "blue";
+      return temp;
     case "toYellow":
       // console.log("yellow");
-      return {...state, buttonColor: "yellow"};
+      temp.modelColor[temp.currentCount].color = "yellow";
+      return temp;
     case "toOrange":
       // console.log("orange");
-      return {...state, buttonColor: "orange"};
+      temp.modelColor[temp.currentCount].color = "orange";
+      return temp;
     case "toPink":
       // console.log("pink");
-      return {...state, buttonColor: "pink"};
+      temp.modelColor[temp.currentCount].color = "pink";
+      return temp;
     case "toPurple":
       // console.log("purple");
-      return {...state, buttonColor: "purple"};
+      temp.modelColor[temp.currentCount].color = "purple";
+      return temp;
     case "toTeal":
       // console.log("teal");
-      return {...state, buttonColor: "teal"};
+      temp.modelColor[temp.currentCount].color = "teal";
+      return temp;
     case "toLeft":
         console.log("left");
         return {...state, currentCategory: state.currentCategory - 1};
@@ -41,12 +49,12 @@ function reducer (state, action) {
         return {...state, currentCategory: state.currentCategory + 1};
     case "toUp":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("up")
-        return {...state, currentCategory: state.currentCategory - 1}
+        console.log("up", state.currentCount)
+        return {...state, currentCount: (state.currentCount + 7) % 8}
     case "toDown":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("down")
-        return {...state, currentCategory: state.currentCategory + 1}
+        console.log("down", state.currentCount)
+        return {...state, currentCount: (state.currentCount + 1) % 8}
     default:
       return state;
   } 
@@ -57,7 +65,7 @@ export const UIContext = createContext();
 function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
-    <Canvas className="main-canvas">
+    <Canvas className="main-canvas" camera={{fov: 75, position:[-0.5, 1, 5.5]}} >
       <ContextBridge>
           
         {/* Components */}
@@ -77,7 +85,7 @@ function UseContextBridgeWrapper () {
 }
 
 export default function App() {
-  const [{ buttonColor, modelColor, currentCategory }, dispatch] = useReducer(reducer, 
+  const [{ buttonColor, modelColor, currentShape, currentCount }, dispatch] = useReducer(reducer, 
     { buttonColor: "green", 
       currentShape: {
         backing: "backing",
@@ -89,24 +97,24 @@ export default function App() {
         skin: "skin",
         mouth: "mouth"
       },
-      currentCategory: 100,
-      modelColor: {
-        backing: "red",
-        eyes: "white",
-        glasses: "brown",
-        hat: "blue",
-        head: "orange",
-        chest: "green",
-        skin: "orange",
-        mouth: "red"
-      }
+      currentCount: 1,
+      modelColor: [
+        {name: "backing", color: "red"},
+        {name: "eyes", color: "white"},
+        {name: "glasses", color: "pink"},
+        {name: "hat", color: "blue"},
+        {name: "head", color: "orange"},
+        {name: "chest", color: "green"},
+        {name: "skin", color: "orange"},
+        {name: "mouth", color: "red"}
+      ]
     })
   // const [buttonState, dispatch] = useReducer(reducer, { buttonColor: "green", headShape: 100 })
   // move inside the provider within a shell function?
   // everything goes within the Canvas
   return (
   <div>
-    <UIContext.Provider value={{ buttonColor, currentCategory, modelColor, dispatch }}>
+    <UIContext.Provider value={{ buttonColor, currentCount, currentShape, modelColor, dispatch }}>
       
       <UseContextBridgeWrapper />
 

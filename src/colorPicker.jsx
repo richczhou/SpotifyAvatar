@@ -4,14 +4,14 @@ import { UIContext } from "./App";
 
 function ColorPicker () {
 
-    const { dispatch } = useContext(UIContext);
+    const { currentCategory, dispatch } = useContext(UIContext);
     // console.log(buttonColor)
 
     return (
         <div className="palette">
             <button className="button" 
                     style={{backgroundColor: "blue"}} 
-                    onClick={ () => dispatch( {type: 'toBlue'} ) }>
+                    onClick={ () => dispatch( {obj: "backing", type: 'toBlue'} ) }>
             </button>
             <button className="button" 
                     style={{backgroundColor: "red"}} 

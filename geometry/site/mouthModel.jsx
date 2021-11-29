@@ -15,7 +15,7 @@ const MouthModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/mouth.gltf');
   const tmap = useTexture('./images/lightbakes/mouth.png');
-  const matColor = new THREE.Color(modelColor.mouth);
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "mouth").color);
 
   return (
     <group {...props} dispose={null}>

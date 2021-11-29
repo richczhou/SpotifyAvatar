@@ -15,7 +15,7 @@ const HatModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/hat.gltf');
   const tmap = useTexture('./images/lightbakes/hat.png');
-  const matColor = new THREE.Color(modelColor.hat);
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
 
   return (
     <group {...props} dispose={null}>
