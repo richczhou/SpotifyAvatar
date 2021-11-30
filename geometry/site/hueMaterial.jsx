@@ -7,7 +7,7 @@ const HueMaterial = shaderMaterial(
       uColor: new THREE.Color(), 
       uColor2: new THREE.Color(), 
       uColor3: new THREE.Color(), 
-      uBrightness: 0.99, 
+      uBrightness: 0.99
     },
     // vertex shader
     `
@@ -18,6 +18,7 @@ const HueMaterial = shaderMaterial(
     uniform vec3 uColor2;
     uniform vec3 uColor3;
     uniform float uBrightness;
+    uniform bool uHighlighted;
   
     varying vec2 vUv;
     varying vec3 vVertexColor;
@@ -76,6 +77,7 @@ const HueMaterial = shaderMaterial(
       uniform vec3 uColor2;
       uniform vec3 uColor3;
       uniform float uBrightness;
+      uniform bool uHighlighted;
   
       varying vec2 vUv;
       varying vec3 vVertexColor;
