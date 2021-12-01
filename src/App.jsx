@@ -42,19 +42,31 @@ function reducer (state, action) {
       temp.modelColor[temp.currentCount].color = "teal";
       return temp;
     case "toLeft":
-        console.log("left");
-        return {...state, currentCategory: state.currentCategory - 1};
+      // console.log("left");
+      console.log("left", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      // console.log("left", temp.currentShape["hat"].models.length)
+      if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
+        temp.currentShape[temp.modelColor[temp.currentCount].name].curr += 0.5;
+        temp.currentShape[temp.modelColor[temp.currentCount].name].curr %= 4;
+      }
+      console.log("left2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      return temp;
     case "toRight":
-        console.log("right");
-        return {...state, currentCategory: state.currentCategory + 1};
+      console.log("right", temp.currentShape["chest"])
+      console.log("2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      console.log("len", temp.currentShape[temp.modelColor[temp.currentCount].name].models.length)
+      if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
+        temp.currentShape[temp.modelColor[temp.currentCount].name].curr = (temp.currentShape[temp.modelColor[temp.currentCount].name].curr + 1.5) % 4
+      }
+      return temp;
     case "toUp":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("up", state.currentCount)
-        return {...state, currentCount: (state.currentCount + 7) % 8}
+        console.log("up", state.modelColor[(state.currentCount + 5) % 6].name)
+        return {...state, currentCount: (state.currentCount + 5) % 6}
     case "toDown":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("down", state.currentCount)
-        return {...state, currentCount: (state.currentCount + 1) % 8}
+        console.log("down", state.modelColor[(state.currentCount + 1) % 5].name)
+        return {...state, currentCount: (state.currentCount + 1) % 6}
     default:
       return state;
   } 
@@ -88,25 +100,25 @@ export default function App() {
   const [{ buttonColor, modelColor, currentShape, currentCount }, dispatch] = useReducer(reducer, 
     { buttonColor: "green", 
       currentShape: {
-        backing: "backing",
-        eyes: "eyes",
-        glasses: "glasses",
-        hat: "hat",
-        head: "head",
-        chest: "hoodie",
-        skin: "skin",
-        mouth: "mouth"
+        backing: {curr: 0, models: ["backing"]},
+        eyes: {curr: 0, models: ["eyes", "eyes2", "eyes3", "eyes4"]},
+        glasses: {curr: 2, models: ["glasses", "heartglasses", "glasses", "heartglasses"]},
+        hat: {curr: 0, models: ["hat", "cowboyhat", "tophat"]},
+        head: {curr: 0, models: ["head"]},
+        chest: {curr: 0, models: ["hoodie", "parka", "shirt", "turtleneck"]},
+        skin: {curr: 0, models: ["skin"]},
+        mouth: {curr: 0, models: ["mouth", "mouth2", "mouth3", "mouth4"]}
       },
       currentCount: 1,
       modelColor: [
-        {name: "backing", color: "red"},
-        {name: "eyes", color: "white"},
+        {name: "eyes", color: "blue"},
         {name: "glasses", color: "pink"},
         {name: "hat", color: "blue"},
-        {name: "head", color: "orange"},
         {name: "chest", color: "green"},
+        {name: "mouth", color: "red"},
         {name: "skin", color: "orange"},
-        {name: "mouth", color: "red"}
+        {name: "head", color: "orange"},
+        {name: "backing", color: "red"}
       ]
     })
   // const [buttonState, dispatch] = useReducer(reducer, { buttonColor: "green", headShape: 100 })

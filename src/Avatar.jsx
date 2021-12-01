@@ -4,17 +4,28 @@ import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, shaderMaterial, useTexture, useGLTF } from "@react-three/drei"
 import { UIContext } from "./App"
 
+// god this is fucking bloated
 import HeadModel from '../geometry/site/headModel'
 import HatModel from '../geometry/site/hatModel'
+import TophatModel from '../geometry/site/tophatModel'
 import BackingModel from '../geometry/site/backingModel'
 import EyesModel from '../geometry/site/eyesModel'
+import Eyes2Model from '../geometry/site/eyes2Model'
+import Eyes3Model from '../geometry/site/eyes3Model'
+import Eyes4Model from '../geometry/site/eyes4Model'
 import GlassesModel from '../geometry/site/glassesModel'
+import HeartglassesModel from '../geometry/site/heartglassesModel'
 import MouthModel from '../geometry/site/mouthModel'
+import Mouth2Model from '../geometry/site/mouth2Model'
+import Mouth3Model from '../geometry/site/mouth3Model'
+import Mouth4Model from '../geometry/site/mouth4Model'
 import HoodieModel from '../geometry/site/hoodieModel'
 import ParkaModel from '../geometry/site/parkaModel'
 import ShirtModel from '../geometry/site/shirtModel'
 import SkinModel from '../geometry/site/skinModel'
 import TurtleneckModel from '../geometry/site/turtleneckModel'
+import CowboyhatModel from "../geometry/site/cowboyhatModel"
+
 import Note1Model from "../geometry/site/notes/note1Model"
 import Note2Model from "../geometry/site/notes/note2Model"
 import Note3Model from "../geometry/site/notes/note3Model"
@@ -69,21 +80,20 @@ function Avatar() {
   
     return (
       <group ref={groupRef}>
-        {/* <mesh ref={bodyRef} onClick={() => setClicked(clicked + 1)}>
-          <cylinderGeometry />
-          <meshLambertMaterial ref={shaderRef} />
-        </mesh> */}
-
-        {/* head changes with arrows */}
-        {/* <mesh ref={headRef} args={[headGeos[ headShape%3 ], null]} onClick={() => setClicked(clicked + 1)}>
-          <meshLambertMaterial ref={shaderRef1} />
-        </mesh> */}
 
         <HeadModel
           onClick={() => setClicked(clicked + 1)}
         />
 
         <HatModel 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <TophatModel 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <CowboyhatModel 
           onClick={() => setClicked(clicked + 1)}
         />
         
@@ -94,11 +104,39 @@ function Avatar() {
           onClick={() => setClicked(clicked + 1)}
         />
 
+        <Eyes2Model 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <Eyes3Model 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <Eyes4Model 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
         <GlassesModel 
           onClick={() => setClicked(clicked + 1)}
         />
 
+        <HeartglassesModel 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
         <MouthModel 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <Mouth2Model 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <Mouth3Model 
+          onClick={() => setClicked(clicked + 1)}
+        />
+
+        <Mouth4Model 
           onClick={() => setClicked(clicked + 1)}
         />
 

@@ -12,15 +12,17 @@ import HueMaterial from "./hueMaterial"
 extend({ HueMaterial })
 
 const TurtleneckModel = forwardRef( (props, ref) => {
-  const { modelColor } = useContext(UIContext);
+  const { currentShape, modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/turtleneck.gltf');
   const tmap = useTexture('./images/lightbakes/turtleneck.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
+  let visibility = currentShape.chest.models[currentShape.chest.curr] == "turtleneck";
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
+        visible={visibility}
         castShadow
         receiveShadow
         geometry={nodes.turtleneck.geometry}

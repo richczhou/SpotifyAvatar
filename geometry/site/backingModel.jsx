@@ -32,7 +32,7 @@ const BackingModel = forwardRef( (props, ref) => {
           uColor={ matColor } 
           uColor2={ new THREE.Color("green") }
           uColor3={ new THREE.Color("red") }
-          uBrightess={ 0.1 }
+          uBrightness={ 0.9 }
           attach="material" />
       </mesh>
     </group>

@@ -11,12 +11,12 @@ import HueMaterial from "./hueMaterial"
 
 extend({ HueMaterial })
 
-const GlassesModel = forwardRef( (props, ref) => {
-  const {  currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/glasses.gltf');
-  const tmap = useTexture('./images/lightbakes/glasses.png');
-  const matColor = new THREE.Color(modelColor.find(d => d.name == "glasses").color);
-  let visibility = currentShape.glasses.models[currentShape.glasses.curr] == "glasses";
+const Mouth3Model = forwardRef( (props, ref) => {
+  const { currentShape, modelColor } = useContext(UIContext);
+  const { nodes, materials } = useGLTF('./geometry/site/mouth3.gltf');
+  const tmap = useTexture('./images/lightbakes/mouth3.png');
+  const matColor = new THREE.Color(modelColor.find(d => d.name == "mouth").color);
+  let visibility = currentShape.mouth.models[currentShape.mouth.curr] == "mouth3";
 
   return (
     <group {...props} dispose={null}>
@@ -25,9 +25,9 @@ const GlassesModel = forwardRef( (props, ref) => {
         visible={visibility}
         castShadow
         receiveShadow
-        geometry={nodes.glasses.geometry}
+        geometry={nodes.mouth3.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "glasses"}}
+        userData={{modelType: "mouth3"}}
       >
         <hueMaterial 
           tMap={ tmap }
@@ -41,6 +41,6 @@ const GlassesModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/glasses.gltf')
+useGLTF.preload('./geometry/site/mouth3.gltf')
 
-export default GlassesModel;
+export default Mouth3Model;

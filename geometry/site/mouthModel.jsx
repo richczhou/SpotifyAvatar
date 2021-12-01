@@ -12,15 +12,17 @@ import HueMaterial from "./hueMaterial"
 extend({ HueMaterial })
 
 const MouthModel = forwardRef( (props, ref) => {
-  const { modelColor } = useContext(UIContext);
+  const { currentShape, modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/mouth.gltf');
   const tmap = useTexture('./images/lightbakes/mouth.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "mouth").color);
+  let visibility = currentShape.mouth.models[currentShape.mouth.curr] == "mouth";
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
+        visible={visibility}
         castShadow
         receiveShadow
         geometry={nodes.mouth.geometry}

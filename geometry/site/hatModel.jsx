@@ -12,15 +12,17 @@ import HueMaterial from "./hueMaterial"
 extend({ HueMaterial })
 
 const HatModel = forwardRef( (props, ref) => {
-  const { modelColor } = useContext(UIContext);
+  const { currentShape, modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/hat.gltf');
   const tmap = useTexture('./images/lightbakes/hat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
+  let visibility = currentShape.hat.models[currentShape.hat.curr] == "hat";
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
+        visible={visibility}
         castShadow
         receiveShadow
         geometry={nodes.hat.geometry}

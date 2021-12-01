@@ -12,15 +12,17 @@ import HueMaterial from "./hueMaterial"
 extend({ HueMaterial })
 
 const EyesModel = forwardRef( (props, ref) => {
-  const { modelColor } = useContext(UIContext);
+  const { currentShape, modelColor } = useContext(UIContext);
   const { nodes, materials } = useGLTF('./geometry/site/eyes.gltf');
   const tmap = useTexture('./images/lightbakes/eyes.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "eyes").color);
+  let visibility = currentShape.eyes.models[currentShape.eyes.curr] == "eyes";
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
+        visible={visibility}
         castShadow
         receiveShadow
         geometry={nodes.eyes.geometry}
@@ -30,7 +32,7 @@ const EyesModel = forwardRef( (props, ref) => {
         <hueMaterial 
           tMap={ tmap }
           uColor={ new THREE.Color("white") } 
-          uColor2={ new THREE.Color("grey") }
+          uColor2={ matColor }
           uColor3={ new THREE.Color("red") }
           uBrightess={ 0.1 }
           attach="material" />

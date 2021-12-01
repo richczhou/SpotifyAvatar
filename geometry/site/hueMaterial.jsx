@@ -89,6 +89,7 @@ const HueMaterial = shaderMaterial(
           vec2 uv = rotateUVmatrix(vec2(1.-vUv.x, vUv.y), vec2(0.5), -PI/2.);
       
           vec3 color = texture2D(tMap, uv).rgb;
+          color *= (1./uBrightness);
   
           //r altcolor1
           if (vVertexColor.r > 0.1) {
@@ -110,7 +111,7 @@ const HueMaterial = shaderMaterial(
           color = mix(color, color * 1.2 + 0.2, clampedFresnel);
           //color *= clampedFresnel;
   
-          color *= uBrightness;
+          // color *= uBrightness;
           color += 0.1;
           clamp(color, vec3(0), vec3(1));
   
