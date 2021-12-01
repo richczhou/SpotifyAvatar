@@ -21,6 +21,7 @@ const BackingModel = forwardRef( (props, ref) => {
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
+        scale={2}
         castShadow
         receiveShadow
         geometry={nodes.backing.geometry}

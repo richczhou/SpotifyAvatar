@@ -77,11 +77,11 @@ export const UIContext = createContext();
 function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
-    <Canvas className="main-canvas" camera={{fov: 75, position:[-0.5, 1, 5.5]}} >
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 5.5]}} >
       <ContextBridge>
           
         {/* Components */}
-        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+        {/* <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} /> */}
         
         {/* LIGHTS! */}
         <ambientLight intensity={0.3} />
