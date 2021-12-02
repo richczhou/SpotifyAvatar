@@ -27,7 +27,7 @@ const NoteMaterial = shaderMaterial(
     void main() {
         vUv = uv;
         vec3 pos = position;
-        //pos += sin(time);
+        pos += sin(uTime);
         
         vec4 worldPos = modelMatrix * vec4(pos, 1.0);
         vec4 modelViewPos = modelViewMatrix * vec4(pos, 1.0);
