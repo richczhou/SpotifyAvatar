@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'GoshaSansRegular';
+    src: url('fonts/Gosha-Sans/GoshaSans-Regular.woff');
+}
+
+html {
+    background-color: blueviolet;
+}
+
+h1 {
+    color: white;
+    font-size: 97px;
+    font-family: 'GoshaSansRegular', sans-serif;
+    position: relative;
+    top: 20vh;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    font-family: halyard-display, sans-serif;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    top: 15vh;
+}
+
+.btn {
+    border: 3.9px solid white;
+    background-color: blueviolet;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 155px;
+    width: 194px;
+    height: 68px;   
+
+    position: relative;
+    top: 20vh;
+    left: 49.2vw;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .btn:hover {
+      background-color: white;
+      color: blueviolet;
+  }
+
+  .pastplaylists {
+      border: none;
+      background-color: blueviolet;
+      color: white;
+      font-size: 20px;
+      font-style: italic;
+
+      position: relative;
+      top: 23.5vh;
+      left: 31vw;
+  }
+
+  .pastplaylists:hover {
+    text-decoration-line: underline;
+  }
+
+  /* This styles the aside container */
+#aSide {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: calc(50% - 250px);
+    right: 7%;
+}
+
+/* This styles the 3D object inserted in the aside container */
+#aSide model-viewer {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
