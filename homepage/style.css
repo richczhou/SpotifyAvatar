@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'goshasansbold';
+    src: url('fonts/GoshaSans-Bold.otf') 
+}
+
+html {
+    background-color: blueviolet;
+}
+
+h1 {
+    color: white;
+    font-size: 97px;
+    font-family: halyard-display, sans-serif;
+    position: relative;
+    top: 20vh;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+    font-size: 30px;
+    font-family: halyard-display, sans-serif;
+    font-weight: 200;
+    position: relative;
+    text-align: center;
+    top: 15vh;
+}
+
+.btn {
+    border: 3.9px solid white;
+    background-color: blueviolet;
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 155px;
+    width: 194px;
+    height: 68px;   
+
+    position: relative;
+    top: 20vh;
+    left: 49.2vw;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .btn:hover {
+      background-color: white;
+      color: blueviolet;
+  }
+
+  .pastplaylists {
+      border: none;
+      background-color: blueviolet;
+      color: white;
+      font-size: 20px;
+      font-style: italic;
+
+      position: relative;
+      top: 23.5vh;
+      left: 31vw;
+  }
+
+  .pastplaylists:hover {
+    text-decoration-line: underline;
+  }
