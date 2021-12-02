@@ -6,7 +6,7 @@ import Avatar from "./Avatar"
 import Home from "./Home"
 import ColorPicker from "./colorPicker"
 import Arrows from "./Arrows"
-
+import Navbar from "./Navbar"
 
 function reducer (state, action) {
   let temp = {...state};
@@ -130,6 +130,7 @@ export default function App() {
       
       <UseContextBridgeWrapper />
 
+      <Navbar />
       <ColorPicker />
       <Arrows />
     </UIContext.Provider>
