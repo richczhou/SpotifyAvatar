@@ -17,7 +17,7 @@ const Note3Model = forwardRef( (props, ref) => {
 
   useFrame((state) => {
     // fuck with the numbers here
-    noteRef.current.position.y = 0.8 * Math.sin(state.clock.elapsedTime * 2) - 2.0;
+    noteRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 1.2 - 2.0) - 2.0;
   })
 
 

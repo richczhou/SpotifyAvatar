@@ -79,7 +79,7 @@ function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
     // -0.5, 1.5, 5.5
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 5.5]}} > 
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 39.5]}} > 
       <ContextBridge>
           
         {/* Controls */}

@@ -89,10 +89,10 @@ const NoteMaterial = shaderMaterial(
           // rotate that shit idk why
           vec2 uv = rotateUVmatrix(vec2(1.-vUv.x, vUv.y), vec2(0.5), -PI/2.);
       
-          vec3 color = vec3(0.11);
+          vec3 color = vec3(0.06);
   
           float fresnel = getFresnel(vNormal, vViewDir, 1.0) * 1.0;
-          color = mix(color, mix(backgroundColor, vec3(0.4), 0.8), fresnel);
+          color = mix(color, mix(backgroundColor, vec3(0.6), 0.4), fresnel*0.7);
 
           clamp(color, vec3(0), vec3(1));
   
