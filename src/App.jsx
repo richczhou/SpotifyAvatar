@@ -3,6 +3,7 @@ import { Suspense, useRef, useState, useReducer, useContext, createContext } fro
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
 import Avatar from "./Avatar"
+import Home from "./Home"
 import ColorPicker from "./colorPicker"
 import Arrows from "./Arrows"
 
@@ -89,6 +90,7 @@ function UseContextBridgeWrapper () {
         <Suspense fallback={null} >  
           <Environment preset="studio" />
           <Avatar />
+          <Home />
         </Suspense>
 
       </ContextBridge>

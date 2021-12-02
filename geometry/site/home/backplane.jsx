@@ -6,33 +6,29 @@ import * as THREE from "three"
 import React, { forwardRef, useRef, useContext } from 'react'
 import { extend } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
-import NoteMaterial from "../noteMaterial"
+import BackMaterial from "../backMaterial"
 
-extend({ NoteMaterial })
+extend({ BackMaterial })
 
-const Note1Model = forwardRef( (props, ref) => {
-  const { nodes, materials } = useGLTF('./geometry/site/notes/note1.gltf');
-  const tmap = useTexture('./images/lightbakes/note1_AO.png');
+const BackplaneModel = forwardRef( (props, ref) => {
+  const { nodes, materials } = useGLTF('./geometry/site/home/backplane.gltf');
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={ref}
-        position={[-6.8, 2.68, 1.98]}
-        rotation={[0.6, 1.0,-0.5]}
         castShadow
         receiveShadow
-        geometry={nodes.note1.geometry}
+        geometry={nodes.Plane.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "note1"}}
+        userData={{modelType: "backplane"}}
       >
-        <noteMaterial 
-          tMap={ tmap }
+        <backMaterial 
           uColor={ new THREE.Color("#1e1e1e") } 
           uColor2={ new THREE.Color("green") }
           uColor3={ new THREE.Color("red") }
           uColorBackground={ new THREE.Color("#8b42f9") }
-          uBackground={ 0.0 }
+          uBackground={ 1.0 }
           uBrightnss={ 0.1 }
           attach="material" />
       </mesh>
@@ -40,6 +36,6 @@ const Note1Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/notes/note1.gltf')
+useGLTF.preload('./geometry/site/home/backplane.gltf')
 
-export default Note1Model;
+export default BackplaneModel;
