@@ -165,7 +165,7 @@ input[type=text] {
 
 h3 {
     color: white;
-    font-family: Gosha Sans;
+    font-family: Gosha Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -173,14 +173,14 @@ h3 {
 
 h1{
     color: white;
-    font-family: Gosha Sans;
+    font-family: Gosha Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
 }
 
 .text-input {
     color: black;
-    font-family: Gosha Sans;
+    font-family: Gosha Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
 }
@@ -195,7 +195,7 @@ hr.solid {
 
 p {
     color: white;
-    font-family: Halyard Display;
+    font-family: Halyard Display, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
