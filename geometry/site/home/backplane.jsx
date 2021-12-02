@@ -16,6 +16,7 @@ const BackplaneModel = forwardRef( (props, ref) => {
   return (
     <group {...props} dispose={null}>
       <mesh
+        position={ [0,0,3] }
         ref={ref}
         castShadow
         receiveShadow

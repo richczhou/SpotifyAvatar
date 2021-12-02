@@ -41,7 +41,7 @@ function Home() {
     useFrame((state, delta) => {
       // console.log("This runs at 60fps")
       //groupRef.current.position.y = 0.1 * Math.sin(state.clock.elapsedTime * 2);
-      groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
+      // groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
 
       // shaderRef.current.uColor = color1.lerp(color2, (state.mouse.x + 1)/2);
       // shaderRef.current.color = matColor;
@@ -53,7 +53,7 @@ function Home() {
   
   
     return (
-      <group position={[-0.2, 0, 0]} ref={groupRef}>
+      <group position={[-0.2, 0, 20]} ref={groupRef}>
 
         <Note1Model
           onClick={() => setClicked(clicked + 1)}

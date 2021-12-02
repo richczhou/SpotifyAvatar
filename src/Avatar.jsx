@@ -26,12 +26,6 @@ import SkinModel from '../geometry/site/skinModel'
 import TurtleneckModel from '../geometry/site/turtleneckModel'
 import CowboyhatModel from "../geometry/site/cowboyhatModel"
 
-import Note1Model from "../geometry/site/notes/note1Model"
-import Note2Model from "../geometry/site/notes/note2Model"
-import Note3Model from "../geometry/site/notes/note3Model"
-import Note4Model from "../geometry/site/notes/note4Model"
-import Note5Model from "../geometry/site/notes/note5Model"
-
 /*
 const HeadModel = forwardRef((props, ref) => {
   const tmap = useTexture('./images/lightbakes/glasses.png');
