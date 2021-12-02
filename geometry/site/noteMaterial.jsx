@@ -7,7 +7,8 @@ const NoteMaterial = shaderMaterial(
       uColor: new THREE.Color(), 
       uColor2: new THREE.Color(), 
       uColor3: new THREE.Color(), 
-      uBrightness: 0.99
+      uBrightness: 0.99,
+      uTIme: 0.0,
     },
     // vertex shader
     `
@@ -27,7 +28,6 @@ const NoteMaterial = shaderMaterial(
     void main() {
         vUv = uv;
         vec3 pos = position;
-        pos += sin(uTime);
         
         vec4 worldPos = modelMatrix * vec4(pos, 1.0);
         vec4 modelViewPos = modelViewMatrix * vec4(pos, 1.0);
