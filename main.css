@@ -1,106 +1,3 @@
-.btn.dropdown-toggle  {
-    width:150px;
-    text-align:left;
-}
-
-span.caret {
-    position: absolute;
-    left: 90%;
-    top: 45%;
-}
-
-label {
-    padding-top:5px;
-}
-
-.form-label {
-    padding-left:0px !important;
-}
-
-img {
-    width:140px;
-    height:140px;
-}
-
-.btn-success {
-    background-color: #3b7d4a!important;
-}
-
-.btn-success:hover {
-    background-color: #4daf64!important;
-}
-
-img.track {
-    border: 1px solid #8a8a8a;
-}
-
-/* styling for playlist created page */
-* {
-    box-sizing: border-box;
-}
-  
-/* Create two equal columns that floats next to each other */
-body {
-    background-color: black;
-}
-
-img {
-    width: 100%;
-    height: auto;
-}
-
-.column1 {
-    float: left;
-    width: 40%;
-    padding: 10px;
-}
-
-.column2 {
-    float: left;
-    width: 60%;
-    padding: 10px;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* styling for form in playlist created page */
-
-
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    font-size: 30px;
-}
-
-.main {
-    margin: 8%;
-}
-
-ol {
-    color: white;
-    /* padding-inline-start: 2px; */
-    font-size: 30px;
-}
-
-li {
-    margin: 40px 0;
-}
-
-h3 {
-    color: white;
-}
-
-h1 {
-    color: white;
-}
-
-
 /* css reset */
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -149,4 +46,180 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+/* ACTUAL CSS */
+.btn.dropdown-toggle  {
+    width:150px;
+    text-align:left;
+}
+
+span.caret {
+    position: absolute;
+    left: 90%;
+    top: 45%;
+}
+
+label {
+    padding-top:5px;
+}
+
+.form-label {
+    padding-left:0px !important;
+}
+
+img {
+    width:140px;
+    height:140px;
+}
+
+.btn-success {
+    background-color: #3b7d4a!important;
+}
+
+.btn-success:hover {
+    background-color: #4daf64!important;
+}
+
+img.track {
+    border: 1px solid #8a8a8a;
+}
+/* INDEX PAGE CSS */
+#title-main {
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 95px;
+}
+
+#main-title {
+    text-align: center;
+    margin:auto;
+    margin-top: 20%;
+}
+
+#subtext {
+    width: 40%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+}
+
+#button-div {
+    position: absolute;
+    bottom: 40px;
+}
+
+/* PLAYLIST CREATED PAGE CSS */
+* {
+    box-sizing: border-box;
+}
+  
+/* Create two equal columns that floats next to each other */
+body {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    padding: 10px;
+}
+
+.column2 {
+    float: left;
+    width: 60%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* styling for form in playlist created page */
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-size: 40px;
+    background: transparent;
+    color: white;
+}
+
+.main {
+    margin: 8%;
+}
+
+#title {
+    margin-top: 80px;
+}
+
+h3 {
+    color: white;
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+}
+
+h1{
+    color: white;
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.text-input {
+    color: black;
+    font-family: Gosha Sans;
+    font-style: normal;
+    font-weight: normal;
+}
+hr.solid {
+    border-top: 0.5px solid #FFFFFF;
+    margin-top: 20px;
+}
+
+#songs {
+    margin-top: 40px;
+}
+
+p {
+    color: white;
+    font-family: Halyard Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.normal-button {
+    display: inline;
+    padding: 0;
+    border: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: transparent;
+    border: 2px solid white;
+    margin-top: 80px;
+
+    font-family: halyard-display, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    font-style: normal;
+    /* text-align:center;
+    align-items: center; */
+    vertical-align: middle;
+    display: inline;
+    color: white;
 }
