@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="https://use.typekit.net/bac8hwx.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
+    <script src = 'library.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+    <title>Library of Playlists</title>
+</head>
+<body>
+    <!-- ABOUT THIS PROJECT -->
+    <div onclick= "openNav()">
+        <h2 id = "about-text" onclick= "openNav()">About this project</h2>
+    </div>
+    <div id = "sidepage">
+        <p>hello</p>
+        <a href="javascript:void(0)" class="closenav" onclick="closeNav()">&times;</a>
+    </div>
+
+    <!-- CAROUSEL -->
+    <section>
+        <h1>Your Alter Egos</h1>
+        <p>Scroll through a collection of alter egos you have created.</p>
+        <button class = "normal-button"><p>CREATE ANOTHER</p><img class = "icons" src = "icons/north-east.svg"></button>
+        <div class = "divider"> </div>
+    
+        <div class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'GoshaSansRegular';
+    src: url('fonts/Gosha-Sans/GoshaSans-Regular.woff');
+}
+
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* regular css here */
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+html {
+    font-family: 'GoshaSansRegular';
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 90px;
+}
+
+section {
+    margin: 10%;
+    margin-top: 5%;
+}
+#row {
+    transition: 1s transform;
+    margin-top: 50px
+  }
+
+.gallery {
+    background: transparent;
+    margin-top: 50px;
+}
+  
+.gallery-cell {
+    width: 30%;
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    counter-increment: gallery-cell;
+}
+  
+/* cell number */
+.gallery-cell:before {
+    display: block;
+    text-align: center;
+    content: counter(gallery-cell);
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+  
+button p{
+    font-family: halyard-display, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    font-style: normal;
+    /* text-align:center;
+    align-items: center; */
+    vertical-align: middle;
+    display: inline;
+    color: white;
+}
+
+button img{
+    display: inline;
+    width: 28px;
+    padding-top: 2px;
+    vertical-align: middle;
+    fill: white;
+}
+
+.normal-button {
+    display: inline;
+    padding: 0;
+    border: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background-color: transparent;
+    border: 2px solid white;
+    margin-top: 110px;
+}
+
+p {
+    font-family: 'GoshaSansRegular';
+    font-weight: normal;
+    font-size: 36px;
+    margin-top: 30px;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    margin-top: 30px;
+}
+
+#about-text { 
+    top: 10%;
+    right: -20px;
+    /* align:right; */
+    position: fixed;
+    transform: rotate(90deg);
+    transform-origin: top left;
+    color: white;
+    font-size: 24px;
+    font-family: halyard-display,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#sidepage {
+    /* display: none; */
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #C5DDED; 
+}

@@ -33,3 +33,120 @@ img {
 img.track {
     border: 1px solid #8a8a8a;
 }
+
+/* styling for playlist created page */
+* {
+    box-sizing: border-box;
+}
+  
+/* Create two equal columns that floats next to each other */
+body {
+    background-color: black;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    padding: 10px;
+}
+
+.column2 {
+    float: left;
+    width: 60%;
+    padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* styling for form in playlist created page */
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+.main {
+    margin: 8%;
+}
+
+ol {
+    color: white;
+    /* padding-inline-start: 2px; */
+    font-size: 30px;
+}
+
+li {
+    margin: 40px 0;
+}
+
+h3 {
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+
+/* css reset */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
