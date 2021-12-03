@@ -3,7 +3,6 @@ import { Suspense, useRef, useState, useReducer, useContext, createContext } fro
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
 import Avatar from "./Avatar"
-import Home from "./Home"
 import ColorPicker from "./colorPicker"
 import Arrows from "./Arrows"
 import Navbar from "./Navbar"
@@ -79,7 +78,7 @@ function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
     // -0.5, 1.5, 5.5
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 39.5]}} > 
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 5.5]}} > 
       <ContextBridge>
           
         {/* Controls */}
@@ -88,7 +87,6 @@ function UseContextBridgeWrapper () {
         {/* Components */}
         <Suspense fallback={null} >  
           <Avatar />
-          <Home />
         </Suspense>
 
       </ContextBridge>
