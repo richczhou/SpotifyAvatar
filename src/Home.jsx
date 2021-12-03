@@ -1,8 +1,6 @@
 import * as THREE from "three"
-import { Suspense, useRef, useState, useReducer, useContext, forwardRef } from "react"
-import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
-import { OrbitControls, Environment, shaderMaterial, useTexture, useGLTF } from "@react-three/drei"
-import { UIContext } from "./App"
+import { useRef, useState } from "react"
+import { useFrame } from "@react-three/fiber"
 
 // god this is fucking bloated
 import Backplane from '../geometry/site/home/backplane'
@@ -31,11 +29,6 @@ function Home() {
     const groupRef = useRef();
 
     const [clicked, setClicked] = useState(1);
-    const {buttonColor, headShape, modelColor, dispatch} = useContext(UIContext);
-    // console.log(headShape);
-
-    const material = new THREE.MeshLambertMaterial({ color: "green" });
-
   
     // Use hook to add things to render loop
     useFrame((state, delta) => {
