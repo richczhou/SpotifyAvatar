@@ -183,6 +183,7 @@ h1{
     font-family: Gosha Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
+    border-radius: 8px;
 }
 hr.solid {
     border-top: 0.5px solid #FFFFFF;
@@ -210,6 +211,7 @@ p {
     padding-top: 16px;
     padding-bottom: 16px;
     background-color: transparent;
+    border-radius: 8px;
     border: 2px solid white;
     margin-top: 80px;
 

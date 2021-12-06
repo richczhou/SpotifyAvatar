@@ -59,8 +59,8 @@ h2 {
       font-style: italic;
 
       position: relative;
-      -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+      left: 31.5vw;
+      top: 23vh;
   }
 
   .pastplaylists:hover {
