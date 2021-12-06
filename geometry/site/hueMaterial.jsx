@@ -125,7 +125,7 @@ const HueMaterial = shaderMaterial(
           // color *= uBrightness;
           color = saturation(color, 2.0);
 
-          clamp(color, vec3(0), vec3(1));
+          clamp(color, vec3(0), vec3(0.7));
   
           gl_FragColor = vec4(color, 1.0);
       }
