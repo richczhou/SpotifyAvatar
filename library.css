@@ -115,6 +115,8 @@ button p{
     vertical-align: middle;
     display: inline;
     color: white;
+    box-sizing: border-box;
+    border-radius: 155px;
 }
 
 button img{
@@ -130,19 +132,22 @@ button img{
     padding: 0;
     border: none;
     padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 25px;
     background-color: transparent;
     border: 2px solid white;
     margin-top: 110px;
+    box-sizing: border-box;
+    border-radius: 155px;
 }
 
 p {
-    font-family: 'GoshaSansRegular';
+    font-family: halyard-display, sans-serif;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 45px;
     margin-top: 30px;
+    padding-right: 10vw;
 }
 
 .divider {
