@@ -10,35 +10,35 @@ function ColorPicker () {
     return (
         <div className="palette">
             <button className="button" 
-                    style={{backgroundColor: "blue"}} 
+                    style={{backgroundColor: "#5397B0"}} 
                     onClick={ () => dispatch( {obj: "backing", type: 'toBlue'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "red"}} 
+                    style={{backgroundColor: "#9C6F6F"}} 
                     onClick={ () => dispatch( {type: 'toRed'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "green"}} 
+                    style={{backgroundColor: "#90B078"}} 
                     onClick={ () => dispatch( {type: 'toGreen'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "yellow"}} 
+                    style={{backgroundColor: "#9C976F"}} 
                     onClick={ () => dispatch( {type: 'toYellow'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "orange"}} 
+                    style={{backgroundColor: "#EDDFCD"}} 
                     onClick={ () => dispatch( {type: 'toOrange'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "pink"}} 
+                    style={{backgroundColor: "#C6BAA2"}} 
                     onClick={ () => dispatch( {type: 'toPink'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "purple"}} 
+                    style={{backgroundColor: "#797979"}} 
                     onClick={ () => dispatch( {type: 'toPurple'} ) }>
             </button>
             <button className="button" 
-                    style={{backgroundColor: "teal"}} 
+                    style={{backgroundColor: "#202020"}} 
                     onClick={ () => dispatch( {type: 'toTeal'} ) }>        
             </button>
         </div>

@@ -12,35 +12,35 @@ function reducer (state, action) {
   let temp = {...state};
   switch (action.type) {
     case "toGreen":
-      temp.modelColor[temp.currentCount].color = "green";
+      temp.modelColor[temp.currentCount].color = "#90B078";
       return temp;
     case "toRed":
       // console.log("red");
-      temp.modelColor[temp.currentCount].color = "red";
+      temp.modelColor[temp.currentCount].color = "#995454";
       return temp;
     case "toBlue":
       // this might memory leak lmfao
-      temp.modelColor[temp.currentCount].color = "blue";
+      temp.modelColor[temp.currentCount].color = "#6F8D9C";
       return temp;
     case "toYellow":
       // console.log("yellow");
-      temp.modelColor[temp.currentCount].color = "yellow";
+      temp.modelColor[temp.currentCount].color = "#9C976F";
       return temp;
     case "toOrange":
       // console.log("orange");
-      temp.modelColor[temp.currentCount].color = "orange";
+      temp.modelColor[temp.currentCount].color = "#EDDFCD";
       return temp;
     case "toPink":
       // console.log("pink");
-      temp.modelColor[temp.currentCount].color = "pink";
+      temp.modelColor[temp.currentCount].color = "#C6BAA2";
       return temp;
     case "toPurple":
       // console.log("purple");
-      temp.modelColor[temp.currentCount].color = "purple";
+      temp.modelColor[temp.currentCount].color = "#797979";
       return temp;
     case "toTeal":
       // console.log("teal");
-      temp.modelColor[temp.currentCount].color = "teal";
+      temp.modelColor[temp.currentCount].color = "#202020";
       return temp;
     case "toLeft":
       // console.log("left");
@@ -79,7 +79,7 @@ function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
     // -0.5, 1.5, 5.5
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 39.5]}} > 
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 11.5]}} > 
       <ContextBridge>
           
         {/* Controls */}
@@ -111,14 +111,14 @@ export default function App() {
       },
       currentCount: 1,
       modelColor: [
-        {name: "eyes", color: "blue"},
-        {name: "glasses", color: "pink"},
-        {name: "hat", color: "blue"},
-        {name: "chest", color: "green"},
-        {name: "mouth", color: "red"},
-        {name: "skin", color: "orange"},
-        {name: "head", color: "orange"},
-        {name: "backing", color: "red"}
+        {name: "eyes", color: "black"},
+        {name: "glasses", color: "#202020"},
+        {name: "hat", color: "#202020"},
+        {name: "chest", color: "#995454"},
+        {name: "mouth", color: "#C6BAA2"},
+        {name: "skin", color: "#202020"},
+        {name: "head", color: "#EDDFCD"},
+        {name: "backing", color: "#9C6F6F"}
       ]
     })
   // const [buttonState, dispatch] = useReducer(reducer, { buttonColor: "green", headShape: 100 })

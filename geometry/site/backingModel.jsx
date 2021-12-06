@@ -7,9 +7,9 @@ import React, { forwardRef, useRef, useContext } from 'react'
 import { extend } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
 import { UIContext } from "../../src/App"
-import HueMaterial from "./hueMaterial"
+import BackdropMaterial from "./backdropMaterial"
 
-extend({ HueMaterial })
+extend({ BackdropMaterial })
 
 const BackingModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
@@ -28,9 +28,9 @@ const BackingModel = forwardRef( (props, ref) => {
         // material={nodes.backing.material}
         userData={{modelType: "backing"}}
       >
-        <hueMaterial 
+        <backdropMaterial 
           tMap={ tmap }
-          uColor={ matColor } 
+          uColor={ new THREE.Color("#FFFFFF") } 
           uColor2={ new THREE.Color("green") }
           uColor3={ new THREE.Color("red") }
           uBrightness={ 0.9 }

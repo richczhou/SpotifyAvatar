@@ -71,6 +71,12 @@ const HueMaterial = shaderMaterial(
           uv += pivot;
           return uv;
       }
+
+      vec3 saturation(vec3 rgb, float adjustment) {
+        const vec3 W = vec3(0.2125, 0.7154, 0.0721);
+        vec3 intensity = vec3(dot(rgb, W));
+        return mix(intensity, rgb, adjustment);
+    }
   
       uniform sampler2D tMap;
       uniform vec3 uColor;
@@ -87,9 +93,12 @@ const HueMaterial = shaderMaterial(
       void main() {
           // rotate that shit idk why
           vec2 uv = rotateUVmatrix(vec2(1.-vUv.x, vUv.y), vec2(0.5), -PI/2.);
-      
+        
+          vec3 backgroundColor = vec3(0.545, 0.259, 0.976);
           vec3 color = texture2D(tMap, uv).rgb;
-          color *= (1./uBrightness);
+          color.r = crange(color.r, 0.0, 1.0, 0.16, 1.0);
+          color.g = crange(color.g, 0.0, 1.0, 0.1, 1.0);
+          color.b = crange(color.b, 0.0, 1.0, 0.26, 1.0);
   
           //r altcolor1
           if (vVertexColor.r > 0.1) {
@@ -104,15 +113,18 @@ const HueMaterial = shaderMaterial(
               color *= uColor;
           }
   
-          float fresnel = getFresnel(vNormal, vViewDir, 1.0) * 1.0;
-          float clampedFresnel = crange(fresnel, 0.0, 1.0, 0.0, 1.0);
-  
-          //not sure how to blend the fresnel but fuck it I guess we got some options
-          color = mix(color, color * 1.2 + 0.2, clampedFresnel);
-          //color *= clampedFresnel;
-  
+          float avgColor = (color.r + color.g + color.b) / 3.0;
+          float fresnel = getFresnel(vNormal, vViewDir, 1.0);
+          float clampedFresnel = crange(fresnel, 0.0, 1.0, 0.0, avgColor * 2.5);
+          
+          vec3 fresnelColor = saturation(color, 2.0);
+          fresnelColor = mix(fresnelColor, vec3(1.0), 0.6);
+          color = mix(color, fresnelColor, clampedFresnel);
+
+
           // color *= uBrightness;
-          color += 0.1;
+          color = saturation(color, 2.0);
+
           clamp(color, vec3(0), vec3(1));
   
           gl_FragColor = vec4(color, 1.0);
