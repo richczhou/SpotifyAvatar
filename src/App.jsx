@@ -88,7 +88,6 @@ function UseContextBridgeWrapper () {
         {/* Components */}
         <Suspense fallback={null} >  
           <Avatar />
-          <Home />
         </Suspense>
 
       </ContextBridge>
