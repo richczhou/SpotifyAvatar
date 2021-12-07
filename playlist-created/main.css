@@ -111,6 +111,48 @@ img.track {
 }
 
 /* PLAYLIST CREATED PAGE CSS */
+
+/* Nav styling  */
+.topnav {
+    background-color: transparent;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Halyard Display, sans-serif;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add an active class to highlight the current page */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Hide the link that should open and close the topnav on small screens */
+  .topnav .icon {
+    display: none;
+  }
+
+  #about-link {
+    display: inline;
+    float: right;
+  }
+
+
 * {
     box-sizing: border-box;
 }

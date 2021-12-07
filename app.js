@@ -54,11 +54,6 @@ async function getTruthHurtsReccs() {
     const result = await fetch(`https://api.spotify.com/v1/recommendations?seed_artists=56oDRnqbIiwx4mymNEv7dS&seed_genres=pop&seed_tracks=3HWzoMvoF3TQfYg4UPszDq&max_acousticness=0.4`, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + token},
-        // seeds: {
-        //     seed_artists: ['56oDRnqbIiwx4mymNEv7dS'],
-        //     seed_genres: ['pop'],
-        //     seed_tracks: ['3HWzoMvoF3TQfYg4UPszDq']
-        // }
     });
     // console.log(result);
     const data = await result.json();
