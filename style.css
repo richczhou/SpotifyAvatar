@@ -59,12 +59,34 @@ h2 {
       font-style: italic;
 
       position: relative;
-      left: 31.5vw;
       top: 23vh;
+      left: 31vw;
   }
 
   .pastplaylists:hover {
     text-decoration-line: underline;
+  }
+
+  /* Use for responsive */
+  @media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+        top: 20vh;
+    }
+
+    .btn {
+        top: 25vh;
+    }
+
+    .pastplaylists {
+        font-size: 18px;
+        top: 27vh;
+        left: -10.5vw;
+    }
   }
 
   /* This styles the aside container */
