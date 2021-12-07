@@ -6,6 +6,7 @@ import Avatar from "./Avatar"
 import ColorPicker from "./colorPicker"
 import Arrows from "./Arrows"
 import Navbar from "./Navbar"
+import Loading from "./Loading"
 
 function reducer (state, action) {
   let temp = {...state};
@@ -83,7 +84,7 @@ function UseContextBridgeWrapper () {
           
         {/* Controls */}
         <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
-        
+
         {/* Components */}
         <Suspense fallback={null} >  
           <Avatar />
@@ -125,12 +126,13 @@ export default function App() {
   return (
   <div>
     <UIContext.Provider value={{ buttonColor, currentCount, currentShape, modelColor, dispatch }}>
-      
-      <UseContextBridgeWrapper />
+      <Suspense fallback={<Loading/>}>
+        <UseContextBridgeWrapper />
 
-      <Navbar />
-      <ColorPicker />
-      <Arrows />
+        <Navbar />
+        <ColorPicker />
+        <Arrows />
+      </Suspense>
     </UIContext.Provider>
   </div>
   );
