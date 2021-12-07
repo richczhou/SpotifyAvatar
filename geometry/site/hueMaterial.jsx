@@ -19,6 +19,7 @@ const HueMaterial = shaderMaterial(
     uniform vec3 uColor3;
     uniform float uBrightness;
     uniform bool uHighlighted;
+    uniform float time;
   
     varying vec2 vUv;
     varying vec3 vVertexColor;
@@ -84,6 +85,8 @@ const HueMaterial = shaderMaterial(
       uniform vec3 uColor3;
       uniform float uBrightness;
       uniform bool uHighlighted;
+      uniform float uOn;
+      uniform float time;
   
       varying vec2 vUv;
       varying vec3 vVertexColor;
@@ -126,6 +129,7 @@ const HueMaterial = shaderMaterial(
           color = saturation(color, 2.0);
 
           clamp(color, vec3(0), vec3(0.7));
+          //color += crange(sin(time + uv.y * 14.5), -1.0, 1.0, 0.0, fresnel * 0.44);
   
           gl_FragColor = vec4(color, 1.0);
       }

@@ -35,6 +35,7 @@ const HatModel = forwardRef( (props, ref) => {
           uColor2={ new THREE.Color("green") }
           uColor3={ new THREE.Color("red") }
           uBrightnss={ 0.1 }
+          uOn = { Number(visibility) }
           attach="material" />
       </mesh>
     </group>

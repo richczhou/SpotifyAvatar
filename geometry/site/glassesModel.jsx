@@ -34,6 +34,7 @@ const GlassesModel = forwardRef( (props, ref) => {
           uColor={ matColor } 
           uColor2={ matColor }
           uColor3={ matColor }
+          uOn = { Number(visibility) }
           uBrightess={ 0.1 }
           attach="material" />
       </mesh>

@@ -60,6 +60,7 @@ function Avatar() {
     // Use hook to add things to render loop
     useFrame((state, delta) => {
       // console.log("This runs at 60fps")
+      groupRef.current.rotation.z = 0.024 * Math.sin(state.clock.elapsedTime * 0.6);
       groupRef.current.position.y = 0.05 * Math.sin(state.clock.elapsedTime * 1.5) - 0.05;
       groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
 
