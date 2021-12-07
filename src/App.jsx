@@ -79,11 +79,11 @@ function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
     // -0.5, 1.5, 5.5
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 11.5]}} > 
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 7.5]}} > 
       <ContextBridge>
           
         {/* Controls */}
-        <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} />
+        {/* <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} /> */}
         
         {/* Components */}
         <Suspense fallback={null} >  

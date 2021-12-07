@@ -62,7 +62,7 @@ function Avatar() {
       // console.log("This runs at 60fps")
       groupRef.current.rotation.z = 0.024 * Math.sin(state.clock.elapsedTime * 0.6);
       groupRef.current.position.y = 0.05 * Math.sin(state.clock.elapsedTime * 1.5) - 0.05;
-      groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%2 ? 1 : 0, 0.2);
+      groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%1.1 ? 1 : 0, 0.2);
 
       // shaderRef.current.uColor = color1.lerp(color2, (state.mouse.x + 1)/2);
       // shaderRef.current.color = matColor;
