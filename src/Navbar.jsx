@@ -5,7 +5,9 @@ import './Navbar.css';
 export default function Navbar () {
     return (
     <div className="navGroup headers">
-        <h2>-IFY</h2>
+        <a href='../index.html'>
+            <h2>-IFY</h2>
+        </a>
         <h2>ABOUT</h2>
     </div>
     )

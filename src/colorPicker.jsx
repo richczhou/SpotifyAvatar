@@ -8,6 +8,7 @@ function ColorPicker () {
     // console.log(buttonColor)
 
     return (
+        <>
         <div className="palette">
             <button className="button" 
                     style={{backgroundColor: "#5397B0"}} 
@@ -41,7 +42,10 @@ function ColorPicker () {
                     style={{backgroundColor: "#202020"}} 
                     onClick={ () => dispatch( {type: 'toTeal'} ) }>        
             </button>
+
+            <a href='../playlist-created/playlist-created.html'>{"Done  >"}</a>
         </div>
+        </>
     );
 }
 
