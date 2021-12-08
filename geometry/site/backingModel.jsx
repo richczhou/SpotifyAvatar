@@ -13,8 +13,8 @@ extend({ BackdropMaterial })
 
 const BackingModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/backing.gltf')
-  const tmap = useTexture('./images/lightbakes/backing.png');
+  const { nodes, materials } = useGLTF('../geometry/site/backing.gltf')
+  const tmap = useTexture('../images/lightbakes/backing.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "backing").color);
 
   return (
@@ -40,6 +40,6 @@ const BackingModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/backing.gltf')
+useGLTF.preload('../geometry/site/backing.gltf')
 
 export default BackingModel;

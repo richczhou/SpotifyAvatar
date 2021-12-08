@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const ShirtModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/shirt.gltf');
-  const tmap = useTexture('./images/lightbakes/shirt.png');
+  const { nodes, materials } = useGLTF('../geometry/site/shirt.gltf');
+  const tmap = useTexture('../images/lightbakes/shirt.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "shirt";
 
@@ -41,6 +41,6 @@ const ShirtModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/shirt.gltf')
+useGLTF.preload('../geometry/site/shirt.gltf')
 
 export default ShirtModel;

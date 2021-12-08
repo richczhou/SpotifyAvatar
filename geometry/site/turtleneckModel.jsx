@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const TurtleneckModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/turtleneck.gltf');
-  const tmap = useTexture('./images/lightbakes/turtleneck.png');
+  const { nodes, materials } = useGLTF('../geometry/site/turtleneck.gltf');
+  const tmap = useTexture('../images/lightbakes/turtleneck.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "turtleneck";
 
@@ -41,6 +41,6 @@ const TurtleneckModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/turtleneck.gltf')
+useGLTF.preload('../geometry/site/turtleneck.gltf')
 
 export default TurtleneckModel;

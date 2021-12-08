@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const HatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/hat.gltf');
-  const tmap = useTexture('./images/lightbakes/hat.png');
+  const { nodes, materials } = useGLTF('../geometry/site/hat.gltf');
+  const tmap = useTexture('../images/lightbakes/hat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
   let visibility = currentShape.hat.models[currentShape.hat.curr] == "hat";
 
@@ -42,6 +42,6 @@ const HatModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/hat.gltf')
+useGLTF.preload('../geometry/site/hat.gltf')
 
 export default HatModel;

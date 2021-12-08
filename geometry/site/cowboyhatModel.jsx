@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const CowboyhatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/cowboyhat.gltf');
-  const tmap = useTexture('./images/lightbakes/cowboyhat.png');
+  const { nodes, materials } = useGLTF('../geometry/site/cowboyhat.gltf');
+  const tmap = useTexture('../images/lightbakes/cowboyhat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
   let visibility = currentShape.hat.models[currentShape.hat.curr] == "cowboyhat";
 
@@ -41,6 +41,6 @@ const CowboyhatModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/cowboyhat.gltf')
+useGLTF.preload('../geometry/site/cowboyhat.gltf')
 
 export default CowboyhatModel;

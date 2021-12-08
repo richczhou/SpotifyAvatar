@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const Eyes2Model = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/eyes2.gltf');
-  const tmap = useTexture('./images/lightbakes/eyes2.png');
+  const { nodes, materials } = useGLTF('../geometry/site/eyes2.gltf');
+  const tmap = useTexture('../images/lightbakes/eyes2.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "eyes").color);
   let visibility = currentShape.eyes.models[currentShape.eyes.curr] == "eyes2";
 
@@ -41,6 +41,6 @@ const Eyes2Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/eyes2.gltf')
+useGLTF.preload('../geometry/site/eyes2.gltf')
 
 export default Eyes2Model;

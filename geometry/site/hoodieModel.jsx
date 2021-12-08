@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const HoodieModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/hoodie.gltf');
-  const tmap = useTexture('./images/lightbakes/hoodie.png');
+  const { nodes, materials } = useGLTF('../geometry/site/hoodie.gltf');
+  const tmap = useTexture('../images/lightbakes/hoodie.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "hoodie";
 
@@ -41,6 +41,6 @@ const HoodieModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/hoodie.gltf')
+useGLTF.preload('../geometry/site/hoodie.gltf')
 
 export default HoodieModel;

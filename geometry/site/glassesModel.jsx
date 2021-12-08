@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const GlassesModel = forwardRef( (props, ref) => {
   const {  currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/glasses.gltf');
-  const tmap = useTexture('./images/lightbakes/glasses.png');
+  const { nodes, materials } = useGLTF('../geometry/site/glasses.gltf');
+  const tmap = useTexture('../images/lightbakes/glasses.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "glasses").color);
   let visibility = currentShape.glasses.models[currentShape.glasses.curr] == "glasses";
 
@@ -42,6 +42,6 @@ const GlassesModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/glasses.gltf')
+useGLTF.preload('../geometry/site/glasses.gltf')
 
 export default GlassesModel;

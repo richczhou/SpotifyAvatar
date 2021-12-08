@@ -11,8 +11,8 @@ import NoteMaterial from "../noteMaterial"
 extend({ NoteMaterial })
 
 const Note3Model = forwardRef( (props, ref) => {
-  const { nodes, materials } = useGLTF('./geometry/site/notes/note3.gltf');
-  const tmap = useTexture('./images/lightbakes/note3_AO.png');
+  const { nodes, materials } = useGLTF('../geometry/site/notes/note3.gltf');
+  const tmap = useTexture('../images/lightbakes/note3_AO.png');
   const noteRef = useRef()
 
   useFrame((state) => {
@@ -47,6 +47,6 @@ const Note3Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/notes/note3.gltf')
+useGLTF.preload('../geometry/site/notes/note3.gltf')
 
 export default Note3Model;

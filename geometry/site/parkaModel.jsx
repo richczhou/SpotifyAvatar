@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const ParkaModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/parka.gltf');
-  const tmap = useTexture('./images/lightbakes/parka.png');
+  const { nodes, materials } = useGLTF('../geometry/site/parka.gltf');
+  const tmap = useTexture('../images/lightbakes/parka.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "parka";
 
@@ -41,6 +41,6 @@ const ParkaModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/parka.gltf')
+useGLTF.preload('../geometry/site/parka.gltf')
 
 export default ParkaModel;

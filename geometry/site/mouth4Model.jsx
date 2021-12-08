@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const Mouth4Model = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/mouth4.gltf');
-  const tmap = useTexture('./images/lightbakes/mouth4.png');
+  const { nodes, materials } = useGLTF('../geometry/site/mouth4.gltf');
+  const tmap = useTexture('../images/lightbakes/mouth4.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "mouth").color);
   let visibility = currentShape.mouth.models[currentShape.mouth.curr] == "mouth4";
 
@@ -41,6 +41,6 @@ const Mouth4Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/mouth4.gltf')
+useGLTF.preload('../geometry/site/mouth4.gltf')
 
 export default Mouth4Model;

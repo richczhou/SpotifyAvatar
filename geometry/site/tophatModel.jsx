@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const TophatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/tophat.gltf');
-  const tmap = useTexture('./images/lightbakes/tophat.png');
+  const { nodes, materials } = useGLTF('../geometry/site/tophat.gltf');
+  const tmap = useTexture('../images/lightbakes/tophat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
   let visibility = currentShape.hat.models[currentShape.hat.curr] == "tophat";
 
@@ -41,6 +41,6 @@ const TophatModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/tophat.gltf')
+useGLTF.preload('../geometry/site/tophat.gltf')
 
 export default TophatModel;

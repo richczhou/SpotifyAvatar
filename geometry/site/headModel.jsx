@@ -13,8 +13,8 @@ extend({ HueMaterial })
 
 const HeadModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('./geometry/site/head.gltf')
-  const tmap = useTexture('./images/lightbakes/head.png');
+  const { nodes, materials } = useGLTF('../geometry/site/head.gltf')
+  const tmap = useTexture('../images/lightbakes/head.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "head").color);
 
   return (
@@ -39,6 +39,6 @@ const HeadModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('./geometry/site/head.gltf')
+useGLTF.preload('../geometry/site/head.gltf')
 
 export default HeadModel;
