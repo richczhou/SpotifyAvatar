@@ -24,7 +24,7 @@ html, body, #root {
 h1 {
     color: white;
     font-size: 97px;
-    font-family: halyard-display, sans-serif;
+    font-family: 'goshasansbold', sans-serif;
     position: relative;
     top: 20vh;
     text-align: center;
