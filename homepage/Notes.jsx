@@ -12,7 +12,7 @@ export default function Notes() {
     <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 35]}} >
       <Suspense fallback={null}>
         <Home />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
       </Suspense>
     </Canvas>
     <div className="content">
