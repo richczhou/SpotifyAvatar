@@ -11,7 +11,7 @@ html, body, #root {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: blueviolet; 
+    background-color: #8b42f9; 
 }
 
 .main-canvas{
@@ -40,7 +40,7 @@ h2 {
 
 .btn {
     border: 3.9px solid white;
-    background-color: blueviolet;
+    background-color: #8b42f9;
     color: white;
     padding: 14px 28px;
     font-size: 20px;
@@ -52,7 +52,7 @@ h2 {
     height: 68px;   
 
     position: relative;
-    top: 31vh;
+    top: 32vh;
     left: 49.2vw;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -60,19 +60,20 @@ h2 {
 
   .btn:hover {
       background-color: white;
-      color: blueviolet;
+      color: #8b42f9;
   }
 
   .pastplaylists {
       border: none;
-      background-color: blueviolet;
+      background-color: #8b42f9;
       color: white;
       font-size: 20px;
       font-style: italic;
 
+      margin-top: 60px;
       position: fixed;
       top: 53.5vh;
-      left: 43vw;
+      left: 42vw;
   }
 
   .pastplaylists:hover {

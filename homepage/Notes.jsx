@@ -9,14 +9,14 @@ export default function Notes() {
   // everything goes within the Canvas
   return (
   <div>
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 35]}} >
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-1.5, 1.5, 32]}} >
       <Suspense fallback={null}>
         <Home />
         {/* <OrbitControls /> */}
       </Suspense>
     </Canvas>
     <div className="content">
-      <h1>Person-ify your music</h1>
+      <h1><span style={{fontFamily: 'GoshaSans-Regular'}}>Person-ify</span> your music</h1>
       <h2>What would your alter ego’s<br/> playlist look like?</h2>
       <a href="../src/character.html">
         <button className="btn default">BEGIN</button>
