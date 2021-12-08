@@ -37,7 +37,7 @@ h2 {
     font-weight: 200;
     position: relative;
     text-align: center;
-    top: 15vh;
+    top: 25vh;
 }
 
 .btn {
@@ -54,7 +54,7 @@ h2 {
     height: 68px;   
 
     position: relative;
-    top: 20vh;
+    top: 31vh;
     left: 49.2vw;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -72,11 +72,27 @@ h2 {
       font-size: 20px;
       font-style: italic;
 
-      position: relative;
-      top: 23.5vh;
-      left: 28vw;
+      position: fixed;
+      top: 53.5vh;
+      left: 43vw;
   }
 
   .pastplaylists:hover {
     text-decoration-line: underline;
+  }
+
+  /* Use for responsive */
+  @media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+        top: 20vh;
+    }
+
+    .btn {
+        top: 25vh;
+    }
   }
