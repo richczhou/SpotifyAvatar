@@ -3,6 +3,7 @@ import { Suspense, useRef, useState, useReducer, useContext, createContext } fro
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
 import Home from "../src/Home"
+import './style.css'
 
 export default function Notes() {
   // everything goes within the Canvas
@@ -20,7 +21,9 @@ export default function Notes() {
       <a href="../src/character.html">
         <button className="btn default">BEGIN</button>
       </a>
-      <button className="pastplaylists">Look at past playlists</button>
+      <a href="../library/library.html">
+        <button className="pastplaylists">Look at past playlists {">"}</button>
+      </a>
     </div>
   </div>
   );
