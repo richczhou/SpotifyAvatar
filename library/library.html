@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="library.css">
+    <link rel="stylesheet" href="https://use.typekit.net/bac8hwx.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.css'>
+    <script src = 'library.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/flickity/1.0.0/flickity.pkgd.js'></script>
+    <title>Library of Playlists</title>
+</head>
+<body>
+    <!-- ABOUT THIS PROJECT -->
+    <div class="topnav" id="myTopnav">
+        <a href= index.html>-IFY</a>
+        <a href="#about" id = "about-link">About </a>
+    </div>
+
+    <!-- CAROUSEL -->
+    <section>
+        <h1>Your Alter Egos</h1>
+        <p>Look at your past personifications to see your playlists and try sharing them with your friends + family!</p>
+        <button class = "normal-button"><p>CREATE ANOTHER</p><img class = "icons" src = "../icons/north-east.svg"></button>
+        <div class = "divider"> </div>
+    
+        <div class="gallery js-flickity"
+            data-flickity-options='{ "wrapAround": true }'>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+            <div class="gallery-cell"></div>
+        </div>
+    </section>
+    
+</body>
+</html>
