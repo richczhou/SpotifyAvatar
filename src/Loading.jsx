@@ -11,8 +11,6 @@ export default function Loading () {
     let path = `../images/loading/note_animation${pngNum}.png`
 
     return (
-    <Html center>
         <img className="image-sequence" src={path} />
-    </Html>
     );
 }

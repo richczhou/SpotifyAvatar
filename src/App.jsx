@@ -79,20 +79,23 @@ export const UIContext = createContext();
 function UseContextBridgeWrapper () {
   const ContextBridge = useContextBridge(UIContext);
   return (
-    // -0.5, 1.5, 5.5
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 7.5]}} > 
-      <ContextBridge>
+    <Suspense fallback={<Loading/>} >  
+      {/* -0.5, 1.5, 5.5 */}
+      <Canvas className="main-canvas" camera={{fov: 50, position:[-0.5, 1.5, 7.5]}} > 
+        <ContextBridge>
+            
+          {/* Controls */}
+          {/* <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} /> */}
           
-        {/* Controls */}
-        {/* <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} /> */}
-        
-        {/* Components */}
-        <Suspense fallback={<Loading/>} >  
-          <Avatar />
-        </Suspense>
+          {/* Components */}
+            <Avatar />
 
-      </ContextBridge>
-    </Canvas>
+        </ContextBridge>
+      </Canvas>
+      <Navbar />
+      <ColorPicker />
+      <Arrows />
+    </Suspense>
   );
 }
 
@@ -128,9 +131,6 @@ export default function App() {
   <div>
     <UIContext.Provider value={{ buttonColor, currentCount, currentShape, modelColor, dispatch }}>
       <UseContextBridgeWrapper />
-      <Navbar />
-      <ColorPicker />
-      <Arrows />
     </UIContext.Provider>
   </div>
   );
