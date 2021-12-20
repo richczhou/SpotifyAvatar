@@ -1,9 +1,9 @@
 @import "./reset.css";
 
-@font-face {
+/* @font-face {
     font-family: 'goshasansbold';
-    src: url('fonts/GoshaSans-Bold.otf') 
-}
+    src: url('fonts/Gosha Sans/GoshaSans-Bold.ttf') 
+} */
 
 html, body, #root {
     margin: 0;

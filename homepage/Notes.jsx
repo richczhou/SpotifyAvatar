@@ -9,7 +9,7 @@ export default function Notes() {
   // everything goes within the Canvas
   return (
   <div>
-    <Canvas className="main-canvas" camera={{fov: 50, position:[-1.5, 1.5, 32]}} >
+    <Canvas className="main-canvas" camera={{fov: 50, position:[-3, 1.5, 32]}} >
       <Suspense fallback={null}>
         <Home />
         {/* <OrbitControls /> */}
