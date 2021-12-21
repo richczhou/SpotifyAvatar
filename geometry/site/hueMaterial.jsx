@@ -121,7 +121,7 @@ const HueMaterial = shaderMaterial(
           float clampedFresnel = crange(fresnel, 0.0, 1.0, 0.0, avgColor * 2.5);
           
           vec3 fresnelColor = saturation(color, 2.0);
-          fresnelColor = mix(fresnelColor, vec3(1.0), 0.6);
+          fresnelColor = mix(fresnelColor, vec3(1.0), 0.4);
           color = mix(color, fresnelColor, clampedFresnel);
 
 
@@ -129,7 +129,7 @@ const HueMaterial = shaderMaterial(
           color = saturation(color, 2.0);
 
           clamp(color, vec3(0), vec3(0.7));
-          //color += crange(sin(time + uv.y * 14.5), -1.0, 1.0, 0.0, fresnel * 0.44);
+          // color += crange(sin(time + uv.y * 14.5), -1.0, 1.0, 0.0, fresnel * 0.44);
   
           gl_FragColor = vec4(color, 1.0);
       }

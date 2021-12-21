@@ -2,6 +2,7 @@ import * as THREE from "three"
 import { Suspense, useRef, useState, useReducer, useContext, createContext } from "react"
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
+
 import Avatar from "./Avatar"
 import Home from "./Home"
 import ColorPicker from "./colorPicker"
@@ -77,7 +78,9 @@ function reducer (state, action) {
 export const UIContext = createContext();
 
 function UseContextBridgeWrapper () {
+
   const ContextBridge = useContextBridge(UIContext);
+
   return (
     <Suspense fallback={<Loading/>} >  
       {/* -0.5, 1.5, 5.5 */}
@@ -88,7 +91,7 @@ function UseContextBridgeWrapper () {
           {/* <OrbitControls enablePan={true} enableZoom={true} enableRotate={true} /> */}
           
           {/* Components */}
-            <Avatar />
+          <Avatar />
 
         </ContextBridge>
       </Canvas>

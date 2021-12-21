@@ -13,6 +13,7 @@ extend({ HueMaterial })
 
 const HatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor } = useContext(UIContext);
+  const hatRef = useRef();
   const { nodes, materials } = useGLTF('../geometry/site/hat.gltf');
   const tmap = useTexture('../images/lightbakes/hat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);

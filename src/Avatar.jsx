@@ -1,14 +1,13 @@
 import * as THREE from "three"
-import { Suspense, useRef, useState, useReducer, useContext, forwardRef } from "react"
-import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
-import { OrbitControls, Environment, shaderMaterial, useTexture, useGLTF } from "@react-three/drei"
+import { useRef, useState, useContext } from "react"
+import { useFrame } from "@react-three/fiber"
+import { Outline, EffectComposer, HueSaturation, BrightnessContrast } from "@react-three/postprocessing"
 import { UIContext } from "./App"
 
 // god this is fucking bloated
 import HeadModel from '../geometry/site/headModel'
 import HatModel from '../geometry/site/hatModel'
 import TophatModel from '../geometry/site/tophatModel'
-import BackingModel from '../geometry/site/backingModel'
 import EyesModel from '../geometry/site/eyesModel'
 import Eyes2Model from '../geometry/site/eyes2Model'
 import Eyes3Model from '../geometry/site/eyes3Model'
@@ -42,8 +41,10 @@ function Avatar() {
   
     // am i stupid
     const groupRef = useRef();
+    const hatRef = useRef();
+    const [active, setActive] = useState(null);
+    const selected = active ? [active] : undefined;
 
-    const [clicked, setClicked] = useState(1);
     const {buttonColor, headShape, modelColor, dispatch} = useContext(UIContext);
     // console.log(headShape);
 
@@ -62,100 +63,113 @@ function Avatar() {
       // console.log("This runs at 60fps")
       groupRef.current.rotation.z = 0.024 * Math.sin(state.clock.elapsedTime * 0.6);
       groupRef.current.position.y = 0.05 * Math.sin(state.clock.elapsedTime * 1.5) - 0.05;
-      groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%1.1 ? 1 : 0, 0.2);
+      // groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%1.1 ? 1 : 0, 0.2);
 
-      // shaderRef.current.uColor = color1.lerp(color2, (state.mouse.x + 1)/2);
-      // shaderRef.current.color = matColor;
-      // console.log(headRef.current.children[0].material)
-      // shaderRef1.current.color = matColor;
-
+      setActive(hatRef);
+      // console.log(active)
       // console.log(headRef.current.material.uniforms)
     })
   
   
     return (
+      <>
       <group position={[-0.2, 0, 0]} ref={groupRef}>
 
         <HeadModel
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <HatModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
+          ref={hatRef}
         />
 
         <TophatModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <CowboyhatModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
         
-        <BackingModel 
-        />
+        {/* <BackingModel 
+        /> */}
 
         <EyesModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Eyes2Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Eyes3Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Eyes4Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <GlassesModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <HeartglassesModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <MouthModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Mouth2Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Mouth3Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <Mouth4Model 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <HoodieModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <ParkaModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <ShirtModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <TurtleneckModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
 
         <SkinModel 
-          onClick={() => setClicked(clicked + 1)}
+          setActive={setActive}
         />
         
       </group>
+      <EffectComposer multisampling={8} autoClear={false}>
+        <Outline 
+          selection={selected}
+          visibleEdgeColor="white"
+          blur
+          pulseSpeed={.4}
+          xray={true}
+          hiddenEdgeColor="black"
+          edgeStrength={10} 
+          width={400}/>
+        <HueSaturation saturation={.22} />
+        <BrightnessContrast brightness={-.15} />
+      </EffectComposer>
+      </>
     )
 }
 
