@@ -15,7 +15,7 @@ const HoodieModel = forwardRef( (props, ref) => {
   const tmap = useTexture('../images/lightbakes/hoodie.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "hoodie";
-  const mat = useHueMat(matColor, tmap, false);
+  const mat = useHueMat(matColor, tmap, true);
 
   return (
     <group {...props} dispose={null}>
