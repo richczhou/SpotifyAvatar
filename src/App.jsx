@@ -117,12 +117,12 @@ export default function App() {
       },
       currentCount: 1,
       modelColor: [
-        {name: "eyes", color: "black"},
+        {name: "eyes", color: "white"},
         {name: "glasses", color: "#202020"},
         {name: "hat", color: "#202020"},
         {name: "chest", color: "#995454"},
         {name: "mouth", color: "#C6BAA2"},
-        {name: "skin", color: "#202020"},
+        {name: "skin", color: "#EDDFCD"},
         {name: "head", color: "#EDDFCD"},
         {name: "backing", color: "#9C6F6F"}
       ]

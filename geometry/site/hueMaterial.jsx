@@ -1,16 +1,34 @@
-import * as THREE from "three"
-import { shaderMaterial } from '@react-three/drei'
+import * as THREE from 'three'
+import { ShaderMaterial, Uniform } from 'three'
+import { useMemo } from 'react'
+import { useFrame } from '@react-three/fiber'
 
-const HueMaterial = shaderMaterial(
-    {
-      tMap: new THREE.Texture(), 
-      uColor: new THREE.Color(), 
-      uColor2: new THREE.Color(), 
-      uColor3: new THREE.Color(), 
-      uBrightness: 0.99
-    },
-    // vertex shader
-    `
+export const useHueMat = (color, tmap, active) => {
+  const mat = useMemo(
+    () =>
+      new ShaderMaterial({
+        uniforms: {
+          tMap: new Uniform(tmap),
+          uColor: new Uniform(color),
+          uBrightness: new Uniform(0.99),
+          uTime: new Uniform(0),
+          uActive: new Uniform(active)
+        },
+        vertexShader: vert,
+        fragmentShader: frag
+      }),
+    [color, tmap, active]
+  )
+
+  useFrame(({ clock }) => {
+    mat.uniforms.uTime.value = clock.getElapsedTime()
+  })
+
+  return mat
+}
+
+// vertex shader
+const vert = `
     attribute vec3 vdata;
   
     uniform sampler2D tMap;
@@ -37,10 +55,10 @@ const HueMaterial = shaderMaterial(
         vNormal = normalize(normalMatrix * normal);
         gl_Position = projectionMatrix * modelViewPos;
     }
-  
-    `,
-    // frag shader
-    `
+  `
+
+// frag shader
+const frag = `
       #define PI 3.1415926538
   
       float range(float oldValue, float oldMin, float oldMax, float newMin, float newMax) {
@@ -134,6 +152,3 @@ const HueMaterial = shaderMaterial(
           gl_FragColor = vec4(color, 1.0);
       }
     `
-  )
-
-export default HueMaterial;
