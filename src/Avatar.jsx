@@ -1,7 +1,6 @@
 import * as THREE from "three"
 import { useRef, useState, useContext } from "react"
 import { useFrame } from "@react-three/fiber"
-import { Outline, EffectComposer, HueSaturation, BrightnessContrast } from "@react-three/postprocessing"
 import { UIContext } from "./App"
 
 // god this is fucking bloated
@@ -42,8 +41,6 @@ function Avatar() {
     // am i stupid
     const groupRef = useRef();
     const hatRef = useRef();
-    const [active, setActive] = useState(null);
-    const selected = active ? [active] : undefined;
 
     const {buttonColor, headShape, modelColor, dispatch} = useContext(UIContext);
     // console.log(headShape);
@@ -64,9 +61,7 @@ function Avatar() {
       groupRef.current.rotation.z = 0.024 * Math.sin(state.clock.elapsedTime * 0.6);
       groupRef.current.position.y = 0.05 * Math.sin(state.clock.elapsedTime * 1.5) - 0.05;
       // groupRef.current.position.z = THREE.MathUtils.lerp(groupRef.current.position.z, clicked%1.1 ? 1 : 0, 0.2);
-
-      setActive(hatRef);
-      // console.log(active)
+      
       // console.log(headRef.current.material.uniforms)
     })
   
@@ -76,99 +71,67 @@ function Avatar() {
       <group position={[-0.2, 0, 0]} ref={groupRef}>
 
         <HeadModel
-          setActive={setActive}
         />
 
         <HatModel 
-          setActive={setActive}
           ref={hatRef}
         />
 
         <TophatModel 
-          setActive={setActive}
         />
 
         <CowboyhatModel 
-          setActive={setActive}
         />
         
         {/* <BackingModel 
         /> */}
 
         <EyesModel 
-          setActive={setActive}
         />
 
         <Eyes2Model 
-          setActive={setActive}
         />
 
         <Eyes3Model 
-          setActive={setActive}
         />
 
         <Eyes4Model 
-          setActive={setActive}
         />
 
         <GlassesModel 
-          setActive={setActive}
         />
 
         <HeartglassesModel 
-          setActive={setActive}
         />
 
         <MouthModel 
-          setActive={setActive}
         />
 
         <Mouth2Model 
-          setActive={setActive}
         />
 
         <Mouth3Model 
-          setActive={setActive}
         />
 
         <Mouth4Model 
-          setActive={setActive}
         />
 
         <HoodieModel 
-          setActive={setActive}
         />
 
         <ParkaModel 
-          setActive={setActive}
         />
 
         <ShirtModel 
-          setActive={setActive}
         />
 
         <TurtleneckModel 
-          setActive={setActive}
         />
 
         <SkinModel 
-          setActive={setActive}
         />
         
       </group>
-      <EffectComposer multisampling={8} autoClear={false}>
-        <Outline 
-          selection={selected}
-          visibleEdgeColor="white"
-          blur
-          pulseSpeed={.4}
-          xray={true}
-          hiddenEdgeColor="black"
-          edgeStrength={10} 
-          width={400}/>
-        <HueSaturation saturation={.22} />
-        <BrightnessContrast brightness={-.15} />
-      </EffectComposer>
       </>
     )
 }
