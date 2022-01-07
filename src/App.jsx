@@ -46,29 +46,29 @@ function reducer (state, action) {
       return temp;
     case "toLeft":
       // console.log("left");
-      console.log("left", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      // console.log("left", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
       // console.log("left", temp.currentShape["hat"].models.length)
       if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
         temp.currentShape[temp.modelColor[temp.currentCount].name].curr += 0.5;
         temp.currentShape[temp.modelColor[temp.currentCount].name].curr %= 4;
       }
-      console.log("left2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      // console.log("left2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
       return temp;
     case "toRight":
-      console.log("right", temp.currentShape["chest"])
-      console.log("2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
-      console.log("len", temp.currentShape[temp.modelColor[temp.currentCount].name].models.length)
+      // console.log("right", temp.currentShape["chest"])
+      // console.log("2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
+      // console.log("len", temp.currentShape[temp.modelColor[temp.currentCount].name].models.length)
       if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
         temp.currentShape[temp.modelColor[temp.currentCount].name].curr = (temp.currentShape[temp.modelColor[temp.currentCount].name].curr + 1.5) % 4
       }
       return temp;
     case "toUp":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("up", state.modelColor[(state.currentCount + 5) % 6].name)
+        // console.log("up", state.modelColor[(state.currentCount + 5) % 6].name)
         return {...state, currentCount: (state.currentCount + 5) % 6}
     case "toDown":
       // backing, eyes, glasses, hat, head, chest, skin, mouth
-        console.log("down", state.modelColor[(state.currentCount + 1) % 5].name)
+        // console.log("down", state.modelColor[(state.currentCount + 1) % 6].name)
         return {...state, currentCount: (state.currentCount + 1) % 6}
     default:
       return state;

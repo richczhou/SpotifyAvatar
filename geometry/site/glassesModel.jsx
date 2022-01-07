@@ -10,12 +10,13 @@ import { useHueMat } from "./hueMaterial";
 
 
 const GlassesModel = forwardRef( (props, ref) => {
-  const {  currentShape, modelColor } = useContext(UIContext);
+  const { currentShape, modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('../geometry/site/glasses.gltf');
   const tmap = useTexture('../images/lightbakes/glasses.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "glasses").color);
   let visibility = currentShape.glasses.models[currentShape.glasses.curr] == "glasses";
-  const mat = useHueMat(matColor, tmap, false);
+  let active = visibility && modelColor[currentCount].name == "glasses";
+  const mat = useHueMat(matColor, tmap, active);
 
   return (
     <group {...props} dispose={null}>
