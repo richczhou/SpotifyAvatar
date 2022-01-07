@@ -1,14 +1,13 @@
-// import { Suspense, useRef, useState, useReducer, useContext } from "react"
+import { Link } from "react-router-dom";
 import './Navbar.css';
-// import { UIContext } from "./App";
 
 export default function Navbar () {
     return (
-    <div className="navGroup headers">
-        <a href='../index.html'>
-            <h2>-IFY</h2>
-        </a>
-        <h2>ABOUT</h2>
+    <div className="navGroup">
+        <Link to='/' className="link">
+            <h2 className="headers">-IFY</h2>
+        </Link>
+        <h2 className="headers">ABOUT</h2>
     </div>
     )
 }

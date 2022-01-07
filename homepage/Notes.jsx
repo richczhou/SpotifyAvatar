@@ -1,7 +1,6 @@
-import * as THREE from "three"
-import { Suspense, useRef, useState, useReducer, useContext, createContext } from "react"
-import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
-import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
+import { Suspense } from "react"
+import { Canvas } from "@react-three/fiber"
+import { Link } from "react-router-dom";
 import Home from "../src/Home"
 import './style.css'
 
@@ -17,13 +16,10 @@ export default function Notes() {
     </Canvas>
     <div className="content">
       <h1><span style={{fontFamily: 'GoshaSans-Regular'}}>Person-ify</span> your music</h1>
-      <h2>What would your alter ego’s<br/> playlist look like?</h2>
-      <a href="../src/character.html">
+      <h2 className="subhead">What would your alter ego’s<br/> playlist look like?</h2>
+      <Link to="/create">
         <button className="btn default">BEGIN</button>
-      </a>
-      <a href="../library/library.html">
-        <button className="pastplaylists">Look at past playlists {">"}</button>
-      </a>
+      </Link>
     </div>
   </div>
   );

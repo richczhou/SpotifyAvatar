@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'GoshaSansRegular';
+    src: url('fonts/Gosha-Sans/GoshaSans-Regular.woff');
+}
+
+#render {
+    width: 100%;
+    height: auto;
+}
+
+#render.track {
+    border: 1px solid #8a8a8a;
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    margin-left: 5%;
+}
+
+.column2 {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    margin-right: 5%;
+}
+
+.row {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    padding-top: 15vh;
+    display: flex;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    font-size: 36px;
+    background: transparent;
+    color: white;
+}
+
+#songs {
+    margin-top: 40px;
+}
+
+#songs p {
+    color: white;
+    font-family: Halyard Display, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin-left: 12px;
+}
+
+#title {
+    color: white;
+}
+
+.text-input {
+    color: black;
+    font-family: Gosha Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    box-sizing: border-box;
+    border-radius: 155px;
+}
+
+hr.solid {
+    border-top: 0.5px solid #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    width: 95%;
+}
+
+.normal-button {
+    display: inline;
+
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 155px;
+    border: 2px solid white;
+    margin-top: 40px;
+    margin-left: calc(50% - 120px);
+
+    font-family: halyard-display, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+
+    /* text-align:center;
+    align-items: center; */
+    vertical-align: middle;
+    display: inline;
+    color: white;
+}
+
+.normal-button:hover{
+    background-color: white;
+    color: black;
+}

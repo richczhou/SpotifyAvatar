@@ -1,6 +1,7 @@
 import { Suspense, useRef, useState, useReducer, useContext } from "react"
 import './colorPicker.css';
 import { UIContext } from "./App";
+import { Link } from "react-router-dom";
 
 function ColorPicker () {
 
@@ -43,7 +44,7 @@ function ColorPicker () {
                     onClick={ () => dispatch( {type: 'toTeal'} ) }>        
             </button>
 
-            <a href='../playlist-created/playlist-created.html'>{"Done  >"}</a>
+            <Link className="textbutton" to='/result'>{"Done  >"}</Link>
         </div>
         </>
     );

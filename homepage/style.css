@@ -22,7 +22,7 @@ html, body, #root {
 h1 {
     color: white;
     font-size: 97px;
-    font-family: 'goshasansbold', sans-serif;
+    font-family: halyard-display, sans-serif;
     position: relative;
     top: 20vh;
     text-align: center;
@@ -35,53 +35,41 @@ h2 {
     font-weight: 200;
     position: relative;
     text-align: center;
-    top: 25vh;
+    top: 26vh;
+}
+
+.subhead:hover {
+    text-decoration: none;
 }
 
 .btn {
     border: 3.9px solid white;
-    background-color: #8b42f9;
-    color: white;
+    background-color: white;
+    color: #8b42f9;
     padding: 14px 28px;
-    font-size: 20px;
+    font-size: 30px;
+    font-family: Gosha Sans, sans-serif;
     font-weight: 700;
     cursor: pointer;
     box-sizing: border-box;
     border-radius: 155px;
-    width: 194px;
-    height: 68px;   
+    width: 300px;
+    height: 96px;   
 
     position: relative;
-    top: 32vh;
+    top: 42vh;
     left: 49.2vw;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 
   .btn:hover {
-      background-color: white;
-      color: #8b42f9;
-  }
-
-  .pastplaylists {
-      border: none;
       background-color: #8b42f9;
       color: white;
-      font-size: 20px;
-      font-style: italic;
-
-      margin-top: 60px;
-      position: fixed;
-      top: 53.5vh;
-      left: 42vw;
   }
 
-  .pastplaylists:hover {
-    text-decoration-line: underline;
-  }
-
-  /* Use for responsive */
-  @media only screen and (max-width: 500px) {
+/* breaks for responsive rn */
+@media only screen and (max-width: 500px) {
     h1 {
         font-size: 50px;
     }
@@ -94,4 +82,4 @@ h2 {
     .btn {
         top: 25vh;
     }
-  }
+}

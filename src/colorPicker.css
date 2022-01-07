@@ -16,9 +16,15 @@
     width: 72px;
 }
 
-a {
-    font-family: Helvetica, sans-serif;
+.textbutton {
+    color: white;
+    text-decoration: none;
+    font-family: Gosha Sans, sans-serif;
     font-weight: 500;
     font-size: 1.5em;
     padding-top: 24px;
+}
+
+.textbutton:hover {
+    text-decoration: underline;
 }

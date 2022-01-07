@@ -1,4 +1,4 @@
-import { Html, useProgress, useTexture } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import React from "react";
 
 function map(value, min1, max1, min2, max2) {
