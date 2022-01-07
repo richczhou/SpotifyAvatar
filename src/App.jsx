@@ -4,7 +4,7 @@ import { useContextBridge } from "@react-three/drei"
 
 import Avatar from "./Avatar"
 import ColorPicker from "./colorPicker"
-import Arrows from "./Arrows"
+import Arrows from "./arrows"
 import Navbar from "./Navbar"
 import Loading from "./Loading"
 
