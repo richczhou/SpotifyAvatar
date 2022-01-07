@@ -12,7 +12,7 @@ import { useHueMat } from "./hueMaterial";
 const ParkaModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('/geometry/site/parka.gltf');
-  const tmap = useTexture('../images/lightbakes/parka.png');
+  const tmap = useTexture('/images/lightbakes/parka.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "chest").color);
   let visibility = currentShape.chest.models[currentShape.chest.curr] == "parka";
   let active = visibility && modelColor[currentCount].name == "chest";

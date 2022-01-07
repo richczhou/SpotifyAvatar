@@ -12,7 +12,7 @@ import { useHueMat } from "./hueMaterial";
 const SkinModel = forwardRef( (props, ref) => {
   const { modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('/geometry/site/skin.gltf');
-  const tmap = useTexture('../images/lightbakes/skin.png');
+  const tmap = useTexture('/images/lightbakes/skin.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "skin").color);
   let active = modelColor[currentCount].name == "skin";
   const mat = useHueMat(matColor, tmap, active);

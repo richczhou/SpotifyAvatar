@@ -12,7 +12,7 @@ import { useHueMat } from './hueMaterial'
 const CowboyhatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('/geometry/site/cowboyhat.gltf');
-  const tmap = useTexture('../images/lightbakes/cowboyhat.png');
+  const tmap = useTexture('/images/lightbakes/cowboyhat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
   let visibility = currentShape.hat.models[currentShape.hat.curr] == "cowboyhat";
   let active = visibility && modelColor[currentCount].name == "hat";

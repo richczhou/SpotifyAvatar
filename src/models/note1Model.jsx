@@ -12,7 +12,7 @@ extend({ NoteMaterial })
 
 const Note1Model = forwardRef( (props, ref) => {
   const { nodes, materials } = useGLTF('/geometry/site/notes/note1.gltf');
-  const tmap = useTexture('../images/lightbakes/note1_AO.png');
+  const tmap = useTexture('/images/lightbakes/note1_AO.png');
   const noteRef = useRef();
 
   useFrame((state) => {

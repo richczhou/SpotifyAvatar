@@ -12,7 +12,7 @@ import { useHueMat } from "./hueMaterial";
 const TophatModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('/geometry/site/tophat.gltf');
-  const tmap = useTexture('../images/lightbakes/tophat.png');
+  const tmap = useTexture('/images/lightbakes/tophat.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "hat").color);
   let visibility = currentShape.hat.models[currentShape.hat.curr] == "tophat";
   let active = visibility && modelColor[currentCount].name == "hat";

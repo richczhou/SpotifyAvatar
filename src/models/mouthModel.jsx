@@ -12,7 +12,7 @@ import { useHueMat } from "./hueMaterial";
 const MouthModel = forwardRef( (props, ref) => {
   const { currentShape, modelColor, currentCount } = useContext(UIContext);
   const { nodes, materials } = useGLTF('/geometry/site/mouth.gltf');
-  const tmap = useTexture('../images/lightbakes/mouth.png');
+  const tmap = useTexture('/images/lightbakes/mouth.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "mouth").color);
   let visibility = currentShape.mouth.models[currentShape.mouth.curr] == "mouth";
   let active = visibility && modelColor[currentCount].name == "mouth";

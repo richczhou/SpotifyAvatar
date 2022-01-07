@@ -8,7 +8,7 @@ function map(value, min1, max1, min2, max2) {
 export default function Loading () {
     const { active, progress, errors, item, loaded, total } = useProgress();
     let pngNum = map(progress, 0, 100, 1, 48);
-    let path = `../images/loading/note_animation${pngNum}.png`
+    let path = `/images/loading/note_animation${pngNum}.png`
 
     return (
         <img className="image-sequence" src={path} />
