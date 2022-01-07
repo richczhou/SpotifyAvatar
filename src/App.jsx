@@ -47,7 +47,7 @@ function reducer (state, action) {
       // console.log("left", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
       // console.log("left", temp.currentShape["hat"].models.length)
       if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
-        temp.currentShape[temp.modelColor[temp.currentCount].name].curr += 0.5;
+        temp.currentShape[temp.modelColor[temp.currentCount].name].curr += 1;
         temp.currentShape[temp.modelColor[temp.currentCount].name].curr %= 4;
       }
       // console.log("left2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
@@ -57,7 +57,7 @@ function reducer (state, action) {
       // console.log("2", temp.currentShape[temp.modelColor[temp.currentCount].name].curr)
       // console.log("len", temp.currentShape[temp.modelColor[temp.currentCount].name].models.length)
       if(temp.currentShape[temp.modelColor[temp.currentCount].name].models.length > 1) {
-        temp.currentShape[temp.modelColor[temp.currentCount].name].curr = (temp.currentShape[temp.modelColor[temp.currentCount].name].curr + 1.5) % 4
+        temp.currentShape[temp.modelColor[temp.currentCount].name].curr = (temp.currentShape[temp.modelColor[temp.currentCount].name].curr + 3) % 4
       }
       return temp;
     case "toUp":
