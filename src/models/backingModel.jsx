@@ -6,14 +6,14 @@ import * as THREE from "three"
 import React, { forwardRef, useRef, useContext } from 'react'
 import { extend } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
-import { UIContext } from "../../src/App"
+import { UIContext } from "../App"
 import BackdropMaterial from "./backdropMaterial"
 
 extend({ BackdropMaterial })
 
 const BackingModel = forwardRef( (props, ref) => {
   const { modelColor } = useContext(UIContext);
-  const { nodes, materials } = useGLTF('../geometry/site/backing.gltf')
+  const { nodes, materials } = useGLTF('/geometry/site/backing.gltf')
   const tmap = useTexture('../images/lightbakes/backing.png');
   const matColor = new THREE.Color(modelColor.find(d => d.name == "backing").color);
 
@@ -40,6 +40,6 @@ const BackingModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('../geometry/site/backing.gltf')
+useGLTF.preload('/geometry/site/backing.gltf')
 
 export default BackingModel;

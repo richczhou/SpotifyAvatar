@@ -6,31 +6,31 @@ import * as THREE from "three"
 import React, { forwardRef, useRef, useContext } from 'react'
 import { extend, useFrame } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
-import NoteMaterial from "../noteMaterial"
+import NoteMaterial from "./noteMaterial"
 
 extend({ NoteMaterial })
 
-const Note5Model = forwardRef( (props, ref) => {
-  const { nodes, materials } = useGLTF('../geometry/site/notes/note5.gltf');
-  const tmap = useTexture('../images/lightbakes/note5_AO.png');
-  const noteRef = useRef()
+const Note1Model = forwardRef( (props, ref) => {
+  const { nodes, materials } = useGLTF('/geometry/site/notes/note1.gltf');
+  const tmap = useTexture('../images/lightbakes/note1_AO.png');
+  const noteRef = useRef();
 
   useFrame((state) => {
     // fuck with the numbers here
-    noteRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 1.3) + 4.95;
+    noteRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 1.2) + 2.68;
   })
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={noteRef}
-        position={[-1.8, 4.95, -2.1]}
-        rotation={[0.4, -0.4,-0.12]}
+        position={[-6.8, 2.68, 1.98]}
+        rotation={[0.6, 1.0,-0.5]}
         castShadow
         receiveShadow
-        geometry={nodes.note5.geometry}
+        geometry={nodes.note1.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "note5"}}
+        userData={{modelType: "note1"}}
       >
         <noteMaterial 
           tMap={ tmap }
@@ -38,7 +38,7 @@ const Note5Model = forwardRef( (props, ref) => {
           uColor2={ new THREE.Color("green") }
           uColor3={ new THREE.Color("red") }
           uColorBackground={ new THREE.Color("#8b42f9") }
-          uBackground={ 1.0 }
+          uBackground={ 0.0 }
           uBrightnss={ 0.1 }
           attach="material" />
       </mesh>
@@ -46,6 +46,6 @@ const Note5Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('../geometry/site/notes/note5.gltf')
+useGLTF.preload('/geometry/site/notes/note1.gltf')
 
-export default Note5Model;
+export default Note1Model;

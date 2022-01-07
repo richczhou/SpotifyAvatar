@@ -6,32 +6,31 @@ import * as THREE from "three"
 import React, { forwardRef, useRef, useContext } from 'react'
 import { extend, useFrame } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
-import NoteMaterial from "../noteMaterial"
+import NoteMaterial from "./noteMaterial"
 
 extend({ NoteMaterial })
 
-const Note4Model = forwardRef( (props, ref) => {
-  const { nodes, materials } = useGLTF('../geometry/site/notes/note4.gltf');
-  const tmap = useTexture('../images/lightbakes/note4_AO.png');
+const Note5Model = forwardRef( (props, ref) => {
+  const { nodes, materials } = useGLTF('/geometry/site/notes/note5.gltf');
+  const tmap = useTexture('../images/lightbakes/note5_AO.png');
   const noteRef = useRef()
 
   useFrame((state) => {
     // fuck with the numbers here
-    noteRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 1.2) - 0.63;
+    noteRef.current.position.y = 0.2 * Math.sin(state.clock.elapsedTime * 1.3) + 4.95;
   })
-
 
   return (
     <group {...props} dispose={null}>
       <mesh
         ref={noteRef}
-        position={[4.34, -0.63, 1.51]}
-        rotation={[-0.1, -0.9,0.1]}
+        position={[-1.8, 4.95, -2.1]}
+        rotation={[0.4, -0.4,-0.12]}
         castShadow
         receiveShadow
-        geometry={nodes.note4.geometry}
+        geometry={nodes.note5.geometry}
         // material={nodes.head.material}
-        userData={{modelType: "note4"}}
+        userData={{modelType: "note5"}}
       >
         <noteMaterial 
           tMap={ tmap }
@@ -47,6 +46,6 @@ const Note4Model = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('../geometry/site/notes/note4.gltf')
+useGLTF.preload('/geometry/site/notes/note5.gltf')
 
-export default Note4Model;
+export default Note5Model;

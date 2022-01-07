@@ -1,10 +1,8 @@
-import * as THREE from "three"
-import { Suspense, useRef, useState, useReducer, useContext, createContext } from "react"
-import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
-import { OrbitControls, Environment, shaderMaterial, useContextBridge } from "@react-three/drei"
+import { Suspense, useReducer, createContext } from "react"
+import { Canvas } from "@react-three/fiber"
+import { useContextBridge } from "@react-three/drei"
 
 import Avatar from "./Avatar"
-import Home from "./Home"
 import ColorPicker from "./colorPicker"
 import Arrows from "./Arrows"
 import Navbar from "./Navbar"

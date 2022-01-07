@@ -4,25 +4,25 @@ import { useFrame } from "@react-three/fiber"
 import { UIContext } from "./App"
 
 // god this is fucking bloated
-import HeadModel from '../geometry/site/headModel'
-import HatModel from '../geometry/site/hatModel'
-import TophatModel from '../geometry/site/tophatModel'
-import EyesModel from '../geometry/site/eyesModel'
-import Eyes2Model from '../geometry/site/eyes2Model'
-import Eyes3Model from '../geometry/site/eyes3Model'
-import Eyes4Model from '../geometry/site/eyes4Model'
-import GlassesModel from '../geometry/site/glassesModel'
-import HeartglassesModel from '../geometry/site/heartglassesModel'
-import MouthModel from '../geometry/site/mouthModel'
-import Mouth2Model from '../geometry/site/mouth2Model'
-import Mouth3Model from '../geometry/site/mouth3Model'
-import Mouth4Model from '../geometry/site/mouth4Model'
-import HoodieModel from '../geometry/site/hoodieModel'
-import ParkaModel from '../geometry/site/parkaModel'
-import ShirtModel from '../geometry/site/shirtModel'
-import SkinModel from '../geometry/site/skinModel'
-import TurtleneckModel from '../geometry/site/turtleneckModel'
-import CowboyhatModel from "../geometry/site/cowboyhatModel"
+import HeadModel from './models/headModel'
+import HatModel from './models/hatModel'
+import TophatModel from './models/tophatModel'
+import EyesModel from './models/eyesModel'
+import Eyes2Model from './models/eyes2Model'
+import Eyes3Model from './models/eyes3Model'
+import Eyes4Model from './models/eyes4Model'
+import GlassesModel from './models/glassesModel'
+import HeartglassesModel from './models/heartglassesModel'
+import MouthModel from './models/mouthModel'
+import Mouth2Model from './models/mouth2Model'
+import Mouth3Model from './models/mouth3Model'
+import Mouth4Model from './models/mouth4Model'
+import HoodieModel from './models/hoodieModel'
+import ParkaModel from './models/parkaModel'
+import ShirtModel from './models/shirtModel'
+import SkinModel from './models/skinModel'
+import TurtleneckModel from './models/turtleneckModel'
+import CowboyhatModel from "./models/cowboyhatModel"
 
 /*
 const HeadModel = forwardRef((props, ref) => {

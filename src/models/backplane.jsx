@@ -6,12 +6,12 @@ import * as THREE from "three"
 import React, { forwardRef, useRef, useContext } from 'react'
 import { extend } from "@react-three/fiber"
 import { useGLTF, useTexture } from '@react-three/drei'
-import BackMaterial from "../backMaterial"
+import BackMaterial from "./backMaterial"
 
 extend({ BackMaterial })
 
 const BackplaneModel = forwardRef( (props, ref) => {
-  const { nodes, materials } = useGLTF('../geometry/site/home/backplane.gltf');
+  const { nodes, materials } = useGLTF('/geometry/site/home/backplane.gltf');
 
   return (
     <group {...props} dispose={null}>
@@ -37,6 +37,6 @@ const BackplaneModel = forwardRef( (props, ref) => {
   )
 })
 
-useGLTF.preload('../geometry/site/home/backplane.gltf')
+useGLTF.preload('/geometry/site/home/backplane.gltf')
 
 export default BackplaneModel;

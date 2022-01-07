@@ -3,13 +3,13 @@ import { Suspense, useRef, useState, useReducer, useContext, forwardRef } from "
 import { Canvas, useFrame, extend, useThree } from "@react-three/fiber"
 
 // god this is fucking bloated
-import Backplane from '../geometry/site/home/backplane'
+import Backplane from './models/backplane'
 
-import Note1Model from "../geometry/site/notes/note1Model"
-import Note2Model from "../geometry/site/notes/note2Model"
-import Note3Model from "../geometry/site/notes/note3Model"
-import Note4Model from "../geometry/site/notes/note4Model"
-import Note5Model from "../geometry/site/notes/note5Model"
+import Note1Model from "./models/note1Model"
+import Note2Model from "./models/note2Model"
+import Note3Model from "./models/note3Model"
+import Note4Model from "./models/note4Model"
+import Note5Model from "./models/note5Model"
 
 /*
 const HeadModel = forwardRef((props, ref) => {
